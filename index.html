@@ -1,65 +1,58 @@
 <html lang="ru">
-</div>
-</section>
-
-
-<!-- THREE CARDS -->
-<section class="cards">
-<div class="container grid-3">
-<article class="card" id="telegram">
-<h2>Написать в Telegram</h2>
-<p>Хотите узнать про автомобили, подбор, торги, проверку истории или цену покупки/продажи? Пишите — отвечу лично.</p>
-<a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">Открыть чат в Telegram</a>
-<p class="sub">или позвоните: <a href="tel:PHONE_NUMBER">PHONE_NUMBER</a></p>
-</article>
 
 
 <article class="card" id="training">
+<header class="card-h">
+<span class="i i-graduation"></span>
 <h2>Обучение перепродаже</h2>
+</header>
 <ul class="list">
-<li>Пошаговый план: где искать авто и как считать маржу</li>
+<li>Где искать авто и как считать маржу</li>
 <li>Проверки: юр. чистота, ограничения, диагностика</li>
-<li>Переговоры, оформление, безопасные сделки</li>
-<li>Чек‑листы, шаблоны, мои реальные кейсы</li>
+<li>Переговоры, оформление и безопасные сделки</li>
+<li>Чек‑листы, шаблоны, реальные кейсы</li>
 </ul>
 <div class="price-line">
 <span class="price">от 9 900 ₽</span>
 <span class="hint">индивидуально / мини‑группа</span>
 </div>
-<a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">Записаться на обучение</a>
+<a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">Записаться</a>
 </article>
 
 
 <article class="card" id="help">
-<h2>Помощь со снятием ограничений</h2>
-<p>Разберёмся, почему стоит ограничение (штрафы, исполнительные, залоги и т.д.), соберём нужные документы и доведём дело до результата.</p>
+<header class="card-h">
+<span class="i i-unlock"></span>
+<h2>Снятие ограничений</h2>
+</header>
+<p>Диагностируем причину (штрафы, исполнительные, залоги и др.), соберём документы и доведём дело до результата.</p>
 <ul class="list">
-<li>Диагностика причины и плана действий</li>
-<li>Пошаговые инструкции и шаблоны обращений</li>
-<li>Сопровождение до снятия ограничения</li>
+<li>Анализ причины и план действий</li>
+<li>Готовые шаблоны обращений</li>
+<li>Сопровождение до снятия</li>
 </ul>
-<a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">Нужна помощь — написать</a>
-<p class="note">Важно: я не даю юр. консультации, а делюсь практическим опытом и алгоритмами. По сложным случаям направлю к профильному юристу/исполнителю.</p>
+<a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">Нужна помощь</a>
+<p class="note">Делюсь практическим опытом и алгоритмами. Сложные кейсы — к профильному юристу/исполнителю.</p>
 </article>
 </div>
 </section>
 
 
 <!-- FAQ -->
-<section class="faq">
+<section class="faq section">
 <div class="container">
 <h2>Частые вопросы</h2>
 <details>
 <summary>Как быстро отвечаете?</summary>
-<p>Обычно в течение 1–24 часов. Если срочно — прямо напишите «срочно» в начале сообщения.</p>
+<p>Обычно в течение 1–24 часов. Если срочно — добавьте слово «срочно» в начале сообщения.</p>
 </details>
 <details>
-<summary>Нужно ли предоплата?</summary>
-<p>На консультации — да, 100% предоплата. По обучению — фикс или поэтапно, как договоримся.</p>
+<summary>Нужна ли предоплата?</summary>
+<p>Консультации — 100% предоплата. По обучению — фикс/поэтапно, как договоримся.</p>
 </details>
 <details>
-<summary>Работаете удалённо?</summary>
-<p>Да. Часть задач закрывается онлайн. По необходимости — созвон/встреча.</p>
+<summary>Можно удалённо?</summary>
+<p>Да. Многие задачи закрываются онлайн. По необходимости — созвон/встреча.</p>
 </details>
 </div>
 </section>
@@ -68,22 +61,34 @@
 
 <footer class="site-footer">
 <div class="container footer-inner">
-<div>
-<strong>BRAND_NAME</strong><br>
-<a href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">@TELEGRAM_USERNAME</a><br>
-<a href="tel:PHONE_NUMBER">PHONE_NUMBER</a>
+<div class="foot-brand">
+<strong>BRAND_NAME</strong>
+<span>Авто‑эксперт</span>
 </div>
-<div class="foot-nav">
+<nav class="foot-nav">
 <a href="#telegram">Telegram</a>
 <a href="#training">Обучение</a>
 <a href="#help">Снятие ограничений</a>
+</nav>
+<div class="foot-contacts">
+<a href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">@TELEGRAM_USERNAME</a>
+<a href="tel:PHONE_NUMBER">PHONE_NUMBER</a>
 </div>
-<div class="copy">© <span id="y"></span> BRAND_NAME. Все права защищены.</div>
 </div>
-<script>
-// Текущий год в подвале
-document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+<div class="copy">© <span id="y"></span> BRAND_NAME</div>
 </footer>
+
+
+<script>
+// Текущий год
+document.getElementById('y').textContent = new Date().getFullYear();
+
+
+// Scroll‑reveal: плавное появление секций и карточек
+const io = new IntersectionObserver((entries)=>{
+entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.15});
+document.querySelectorAll('.section, .card').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
