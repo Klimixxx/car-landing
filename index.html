@@ -1,94 +1,171 @@
+<!doctype html>
 <html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BRAND_NAME — Авто-консультации, обучение перепродаже и снятие ограничений</title>
+  <meta name="description" content="Напишите в Telegram, пройдите обучение по перепродаже авто и получите помощь со снятием ограничений. Быстро, прозрачно, по делу." />
+  <meta name="theme-color" content="#0b1220" />
+  <!-- Social preview (позже заменишь на свой файл): -->
+  <meta property="og:title" content="BRAND_NAME — авто-эксперт рядом" />
+  <meta property="og:description" content="Консультации, обучение перепродаже и помощь со снятием ограничений. Напишите в Telegram — отвечу лично." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:url" content="https://example.com" />
+  <!-- Шрифт -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- ВАЖНО: абсолютный путь -->
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/favicon.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="BRAND_NAME">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#60a5fa"/>
+              <stop offset="1" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
+          <rect x="4" y="4" width="24" height="24" rx="8" fill="url(#g)"/>
+          <path d="M11 17.5l3 3 7-7" fill="none" stroke="#0b1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-type">BRAND_NAME</span>
+      </a>
+      <nav class="nav" aria-label="Главная навигация">
+        <a href="#telegram">Telegram</a>
+        <a href="#training">Обучение</a>
+        <a href="#help">Снятие ограничений</a>
+      </nav>
+      <a class="btn pill ghost tg-cta" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">
+        <span class="i i-tg" aria-hidden="true"></span> Написать
+      </a>
+    </div>
+  </header>
 
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero section">
+      <div class="decor decor-1" aria-hidden="true"></div>
+      <div class="decor decor-2" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1><span class="grad">Авто-эксперт</span> рядом: консультации, обучение и помощь</h1>
+          <p class="lead">Отвечу в Telegram, научу перепродаже авто с нуля и помогу со снятием ограничений. Никакой воды — только практические шаги.</p>
+          <div class="hero-actions">
+            <a class="btn xl primary" href="#telegram"><span class="i i-tg"></span> Написать в Telegram</a>
+            <a class="btn xl outline" href="#training">Программа обучения</a>
+            <a class="btn xl outline" href="#help">Снятие ограничений</a>
+          </div>
+          <ul class="trust">
+            <li><span class="i i-star"></span> Личные консультации</li>
+            <li><span class="i i-shield"></span> Пошаговые алгоритмы</li>
+            <li><span class="i i-time"></span> Ответ 1–24 часа</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<article class="card" id="training">
-<header class="card-h">
-<span class="i i-graduation"></span>
-<h2>Обучение перепродаже</h2>
-</header>
-<ul class="list">
-<li>Где искать авто и как считать маржу</li>
-<li>Проверки: юр. чистота, ограничения, диагностика</li>
-<li>Переговоры, оформление и безопасные сделки</li>
-<li>Чек‑листы, шаблоны, реальные кейсы</li>
-</ul>
-<div class="price-line">
-<span class="price">от 9 900 ₽</span>
-<span class="hint">индивидуально / мини‑группа</span>
-</div>
-<a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">Записаться</a>
-</article>
+    <!-- CARDS -->
+    <section class="cards section">
+      <div class="container grid-3">
+        <article class="card" id="telegram">
+          <header class="card-h">
+            <span class="i i-chat"></span>
+            <h2>Написать в Telegram</h2>
+          </header>
+          <p>Вопросы про автомобили, торги, проверку истории, цену покупки/продажи — отвечу лично и по существу.</p>
+          <a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener"><span class="i i-tg"></span> Открыть чат</a>
+          <p class="sub">или позвоните: <a href="tel:PHONE_NUMBER">PHONE_NUMBER</a></p>
+        </article>
 
+        <article class="card" id="training">
+          <header class="card-h">
+            <span class="i i-graduation"></span>
+            <h2>Обучение перепродаже</h2>
+          </header>
+          <ul class="list">
+            <li>Где искать авто и как считать маржу</li>
+            <li>Проверки: юр. чистота, ограничения, диагностика</li>
+            <li>Переговоры, оформление и безопасные сделки</li>
+            <li>Чек-листы, шаблоны, реальные кейсы</li>
+          </ul>
+          <div class="price-line">
+            <span class="price">от 9 900 ₽</span>
+            <span class="hint">индивидуально / мини-группа</span>
+          </div>
+          <a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">Записаться</a>
+        </article>
 
-<article class="card" id="help">
-<header class="card-h">
-<span class="i i-unlock"></span>
-<h2>Снятие ограничений</h2>
-</header>
-<p>Диагностируем причину (штрафы, исполнительные, залоги и др.), соберём документы и доведём дело до результата.</p>
-<ul class="list">
-<li>Анализ причины и план действий</li>
-<li>Готовые шаблоны обращений</li>
-<li>Сопровождение до снятия</li>
-</ul>
-<a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">Нужна помощь</a>
-<p class="note">Делюсь практическим опытом и алгоритмами. Сложные кейсы — к профильному юристу/исполнителю.</p>
-</article>
-</div>
-</section>
+        <article class="card" id="help">
+          <header class="card-h">
+            <span class="i i-unlock"></span>
+            <h2>Снятие ограничений</h2>
+          </header>
+          <p>Диагностируем причину (штрафы, исполнительные, залоги и др.), соберём документы и доведём дело до результата.</p>
+          <ul class="list">
+            <li>Анализ причины и план действий</li>
+            <li>Готовые шаблоны обращений</li>
+            <li>Сопровождение до снятия</li>
+          </ul>
+          <a class="btn primary wide" href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">Нужна помощь</a>
+          <p class="note">Делюсь практическим опытом и алгоритмами. Сложные кейсы — к профильному юристу/исполнителю.</p>
+        </article>
+      </div>
+    </section>
 
+    <!-- FAQ -->
+    <section class="faq section">
+      <div class="container">
+        <h2>Частые вопросы</h2>
+        <details>
+          <summary>Как быстро отвечаете?</summary>
+          <p>Обычно в течение 1–24 часов. Если срочно — добавьте слово «срочно» в начале сообщения.</p>
+        </details>
+        <details>
+          <summary>Нужна ли предоплата?</summary>
+          <p>Консультации — 100% предоплата. По обучению — фикс/поэтапно, как договоримся.</p>
+        </details>
+        <details>
+          <summary>Можно удалённо?</summary>
+          <p>Да. Многие задачи закрываются онлайн. По необходимости — созвон/встреча.</p>
+        </details>
+      </div>
+    </section>
+  </main>
 
-<!-- FAQ -->
-<section class="faq section">
-<div class="container">
-<h2>Частые вопросы</h2>
-<details>
-<summary>Как быстро отвечаете?</summary>
-<p>Обычно в течение 1–24 часов. Если срочно — добавьте слово «срочно» в начале сообщения.</p>
-</details>
-<details>
-<summary>Нужна ли предоплата?</summary>
-<p>Консультации — 100% предоплата. По обучению — фикс/поэтапно, как договоримся.</p>
-</details>
-<details>
-<summary>Можно удалённо?</summary>
-<p>Да. Многие задачи закрываются онлайн. По необходимости — созвон/встреча.</p>
-</details>
-</div>
-</section>
-</main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="foot-brand">
+        <strong>BRAND_NAME</strong>
+        <span>Авто-эксперт</span>
+      </div>
+      <nav class="foot-nav">
+        <a href="#telegram">Telegram</a>
+        <a href="#training">Обучение</a>
+        <a href="#help">Снятие ограничений</a>
+      </nav>
+      <div class="foot-contacts">
+        <a href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">@TELEGRAM_USERNAME</a>
+        <a href="tel:PHONE_NUMBER">PHONE_NUMBER</a>
+      </div>
+    </div>
+    <div class="copy">© <span id="y"></span> BRAND_NAME</div>
+  </footer>
 
+  <script>
+    // Текущий год
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-<footer class="site-footer">
-<div class="container footer-inner">
-<div class="foot-brand">
-<strong>BRAND_NAME</strong>
-<span>Авто‑эксперт</span>
-</div>
-<nav class="foot-nav">
-<a href="#telegram">Telegram</a>
-<a href="#training">Обучение</a>
-<a href="#help">Снятие ограничений</a>
-</nav>
-<div class="foot-contacts">
-<a href="https://t.me/TELEGRAM_USERNAME" target="_blank" rel="noopener">@TELEGRAM_USERNAME</a>
-<a href="tel:PHONE_NUMBER">PHONE_NUMBER</a>
-</div>
-</div>
-<div class="copy">© <span id="y"></span> BRAND_NAME</div>
-</footer>
-
-
-<script>
-// Текущий год
-document.getElementById('y').textContent = new Date().getFullYear();
-
-
-// Scroll‑reveal: плавное появление секций и карточек
-const io = new IntersectionObserver((entries)=>{
-entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-},{threshold:0.15});
-document.querySelectorAll('.section, .card').forEach(el=>io.observe(el));
-</script>
+    // Плавное появление секций
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:0.15});
+    document.querySelectorAll('.section, .card').forEach(el=>io.observe(el));
+  </script>
 </body>
 </html>
