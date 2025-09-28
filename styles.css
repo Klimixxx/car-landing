@@ -131,3 +131,10 @@ body{
   .btn.xl{padding:13px 16px; font-size:15px}
   .container{padding:0 16px}
 }
+/* Фиолетовый градиент только для слова «здесь!» */
+.grad-violet{
+  background:linear-gradient(90deg, #a78bfa, #c084fc);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
