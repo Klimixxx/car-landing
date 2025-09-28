@@ -331,3 +331,104 @@ body{
   padding:10px 14px;
 }
 .result-link:hover{ filter:brightness(1.06); }
+
+/* ===== SCHEDULE & PRICING / Расписание и цена ===== */
+.schedule-pricing .sp-head{ text-align:center; margin-bottom:22px; }
+.sp-badge{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  background:rgba(255,255,255,.06); border:1px solid var(--border);
+  color:#fff; font-weight:700; letter-spacing:.3px; font-size:12px;
+}
+.sp-title{
+  margin:10px 0 6px; font-size:34px; line-height:1.1;
+  background:linear-gradient(90deg, #a78bfa, #c084fc); -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.sp-lead{ color:var(--muted); max-width:900px; margin:0 auto; }
+
+.sp-wrap{
+  display:grid; grid-template-columns: 1fr 380px; gap:24px; align-items:start; margin-top:20px;
+}
+@media (max-width:980px){ .sp-wrap{ grid-template-columns: 1fr; } }
+
+/* Таймлайн */
+.sp-timeline{
+  list-style:none; margin:0; padding:18px 0 0 0; position:relative;
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid var(--border); border-radius:18px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  padding-left:64px;
+}
+.sp-timeline::before{
+  content:""; position:absolute; left:36px; top:24px; bottom:24px; width:2px;
+  background:linear-gradient(180deg, var(--brand), var(--brand-2)); opacity:.7;
+  border-radius:2px;
+}
+.sp-item{ position:relative; padding:10px 18px 12px 0; }
+.sp-date{
+  position:absolute; left:-56px; top:8px; width:56px; text-align:right;
+  font-weight:800; color:#fff; opacity:.85;
+}
+.sp-dot{
+  position:absolute; left:30px; top:14px; width:14px; height:14px; border-radius:50%;
+  background:linear-gradient(90deg, var(--brand), var(--brand-2)); border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 8px 22px -12px var(--ring);
+  transform:scale(1); transition:transform .15s ease;
+}
+.sp-item:hover .sp-dot{ transform:scale(1.15); }
+.sp-text{ margin:0; color:var(--muted); }
+.sp-text strong{ color:#fff; }
+
+/* Карточка цены */
+.sp-card{ position:sticky; top:84px; }
+.sp-ticket{
+  position:relative;
+  border:1px solid var(--border); border-radius:20px;
+  background:
+    radial-gradient(120% 120% at 110% -10%, rgba(167,139,250,.18), rgba(167,139,250,0) 50%),
+    radial-gradient(120% 120% at -10% 120%, rgba(122,162,255,.16), rgba(122,162,255,0) 50%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 18px 50px -24px var(--ring);
+  padding:18px 18px 16px;
+  overflow:hidden;
+  transform:translateZ(0); /* для плавности */
+}
+.sp-ribbon{
+  position:absolute; top:12px; right:12px;
+  display:inline-flex; align-items:center; justify-content:center;
+  height:26px; padding:0 10px; border-radius:8px;
+  font-size:12px; letter-spacing:.3px; font-weight:900; color:#0b1220;
+  background:linear-gradient(90deg, var(--brand), var(--brand-2));
+  border:1px solid rgba(255,255,255,.28);
+}
+.sp-price{
+  display:flex; align-items:flex-end; gap:6px; margin-top:8px; margin-bottom:4px;
+}
+.sp-price-num{
+  font-size:44px; font-weight:900; line-height:1;
+  background:linear-gradient(90deg, #9bb7ff, #c7b2ff, #9bb7ff);
+  background-size:200% 100%;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:priceShine 4s linear infinite;
+}
+.sp-price-cur{ font-size:20px; opacity:.9; color:#fff; }
+@keyframes priceShine { 0%{background-position:0% 0;} 100%{background-position:200% 0;} }
+
+.sp-points{ list-style:none; margin:8px 0 12px; padding:0; display:grid; gap:8px; }
+.sp-points li{
+  display:flex; align-items:center; gap:8px; color:var(--muted);
+}
+.sp-points li::before{
+  content:""; width:9px; height:9px; border-radius:2px;
+  background:linear-gradient(90deg, var(--brand), var(--brand-2));
+  display:inline-block; flex-shrink:0;
+}
+.sp-cta{ display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+.sp-btn{ width:100%; justify-content:center; }
+.sp-note{ margin:10px 2px 0; color:var(--muted); font-size:14px; }
+
+/* Hover-микроанимация карточки */
+.sp-ticket:hover{
+  transform:translateY(-2px);
+  box-shadow:0 24px 70px -30px var(--ring), inset 0 1px 0 rgba(255,255,255,.06);
+}
+
