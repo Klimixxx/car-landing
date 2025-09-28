@@ -171,3 +171,11 @@ body{
   background-color: #fff; /* сама иконка белая */
 }
 
+/* Сетка в «Услугах», когда осталась одна карточка */
+.cards .grid-1{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:20px;
+}
+
+
