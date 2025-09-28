@@ -6,22 +6,18 @@
   <title>AuctionAfto — Авто-консультации, обучение перепродаже и снятие ограничений</title>
   <meta name="description" content="Напишите в Telegram, пройдите обучение по перепродаже авто и получите помощь со снятием ограничений. Быстро, прозрачно, по делу." />
   <meta name="theme-color" content="#070b14" />
-  <!-- Соц-превью (заменишь путь на свой файл позже) -->
   <meta property="og:title" content="AuctionAfto — авто-эксперт рядом" />
   <meta property="og:description" content="Консультации, обучение перепродаже и помощь со снятием ограничений. Напишите в Telegram — отвечу лично." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/og-image.jpg" />
   <meta property="og:url" content="/" />
-  <!-- Шрифт -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Важно: абсолютный путь -->
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="/favicon.svg" />
 </head>
 <body>
-  <!-- ФОНОВЫЕ «ПУЗЫРЬКИ» НА ВСЮ СТРАНИЦУ -->
   <div class="page-decor decor-1" aria-hidden="true"></div>
   <div class="page-decor decor-2" aria-hidden="true"></div>
 
@@ -40,10 +36,9 @@
         </svg>
         <span class="logo-type">AuctionA<span class="brand-f">f</span>to</span>
       </a>
+      <!-- Меню: оставили только раздел «Обучение» -->
       <nav class="nav" aria-label="Главная навигация">
-        <a href="#telegram">Telegram</a>
         <a href="#training">Обучение</a>
-        <a href="#help">Снятие ограничений</a>
       </nav>
       <a class="btn pill ghost tg-cta" href="https://t.me/vlasoff_14" target="_blank" rel="noopener">
         <span class="i i-tg" aria-hidden="true"></span> Написать
@@ -65,32 +60,26 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn xl primary" href="https://t.me/vlasoff_14" target="_blank" rel="noopener"><span class="i i-tg"></span> Написать в Telegram</a>
+            <a class="btn xl primary" href="https://t.me/vlasoff_14" target="_blank" rel="noopener">
+              <span class="i i-tg"></span> Написать в Telegram
+            </a>
             <a class="btn xl outline" href="#training">Программа обучения</a>
-            <a class="btn xl outline" href="#help">Снятие ограничений</a>
+            <!-- Кнопка «Снятие ограничений» удалена -->
           </div>
-          <!-- Новый блок с иконкой автомобиля -->
-      <div class="hero-stat">
-        <span class="i i-car" aria-hidden="true"></span>
-        <span>Более 1 000 000 автомобилей выгружено в наш телеграм-канал.</span>
+
+          <!-- Статистика под кнопками -->
+          <div class="hero-stat">
+            <span class="i i-car" aria-hidden="true"></span>
+            <span>Более 1 000 000 автомобилей выгружено в наш телеграм-канал.</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- CARDS -->
     <section class="cards section">
-      <div class="container grid-3">
-        <article class="card" id="telegram">
-          <header class="card-h">
-            <span class="i i-chat"></span>
-            <h2>Написать в Telegram</h2>
-          </header>
-          <p>Вопросы про автомобили, торги, проверку истории, цену покупки/продажи — отвечу лично и по существу.</p>
-          <a class="btn primary wide" href="https://t.me/vlasoff_14" target="_blank" rel="noopener"><span class="i i-tg"></span> Открыть чат</a>
-          <p class="sub">или напишите напрямую: <a href="https://t.me/vlasoff_14" target="_blank" rel="noopener">@vlasoff_14</a></p>
-        </article>
-
+      <!-- Было grid-3, стало grid-1 чтобы растянуть единственный блок -->
+      <div class="container grid-1">
         <article class="card" id="training">
           <header class="card-h">
             <span class="i i-graduation"></span>
@@ -102,26 +91,8 @@
             <li>Переговоры, оформление и безопасные сделки</li>
             <li>Чек-листы, шаблоны, реальные кейсы</li>
           </ul>
-          <div class="price-line">
-            <span class="price">от 9 900 ₽</span>
-            <span class="hint">индивидуально / мини-группа</span>
-          </div>
-          <a class="btn primary wide" href="https://t.me/vlasoff_14" target="_blank" rel="noopener">Записаться</a>
-        </article>
-
-        <article class="card" id="help">
-          <header class="card-h">
-            <span class="i i-unlock"></span>
-            <h2>Снятие ограничений</h2>
-          </header>
-          <p>Диагностируем причину (штрафы, исполнительные, залоги и др.), соберём документы и доведём дело до результата.</p>
-          <ul class="list">
-            <li>Анализ причины и план действий</li>
-            <li>Готовые шаблоны обращений</li>
-            <li>Сопровождение до снятия</li>
-          </ul>
-          <a class="btn primary wide" href="https://t.me/vlasoff_14" target="_blank" rel="noopener">Нужна помощь</a>
-          <p class="note">Делюсь практическим опытом и алгоритмами. Сложные кейсы — к профильному юристу/исполнителю.</p>
+          <!-- Блок с ценой/подсказкой удалён -->
+          <a class="btn primary wide" href="/training.html">Узнать подробнее</a>
         </article>
       </div>
     </section>
@@ -152,10 +123,9 @@
         <strong>AuctionA<span class="brand-f">f</span>to</strong>
         <span>Авто-эксперт</span>
       </div>
+      <!-- Внизу тоже оставляем только «Обучение» -->
       <nav class="foot-nav">
-        <a href="#telegram">Telegram</a>
         <a href="#training">Обучение</a>
-        <a href="#help">Снятие ограничений</a>
       </nav>
       <div class="foot-contacts">
         <a href="https://t.me/vlasoff_14" target="_blank" rel="noopener">@vlasoff_14</a>
