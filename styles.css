@@ -53,7 +53,7 @@ body{
 .btn.xl{padding:14px 18px; border-radius:16px}
 .btn.wide{width:100%; justify-content:center}
 
-/* Icons */
+/* Icons (маски для мелких иконок) */
 .i{display:inline-block; width:18px; height:18px; background:currentColor; -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat}
 .i-tg{ -webkit-mask-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23fff" d="M9.04 15.38l-.37 5.22c.53 0 .76-.23 1.04-.5l2.51-2.4 5.2 3.8c.95.52 1.63.25 1.89-.87l3.43-16.1h0c.3-1.45-.52-2.02-1.44-1.67L1.2 9.82c-1.4.54-1.38 1.31-.24 1.66l5.13 1.6L18.9 6.53c.74-.48 1.39-.22.84.26"/></svg>') }
 
@@ -107,6 +107,7 @@ body{
   .training-title{ font-size:26px; }
 }
 
+/* Сетка «Для кого это подходит?» */
 .feature-grid{
   display:grid; grid-template-columns: repeat(3, minmax(0,1fr));
   gap:20px; margin-top:16px;
@@ -142,6 +143,7 @@ body{
   display:flex; align-items:center; gap:8px;
   font-size:18px; margin:0 0 6px;
 }
+/* Встроенные SVG-иконки у заголовков */
 .feature-body h3 .icon{
   width:20px; height:20px;
   color:#fff;
@@ -151,6 +153,96 @@ body{
 
 .feature-cta{margin-top:22px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
 .feature-cta .sub{color:var(--muted); font-size:14px; margin:0}
+
+/* ===== START (С чего мы начнём?) — таймлайн-степпер ===== */
+.start-title{
+  text-align:center;
+  font-size:34px;
+  line-height:1.15;
+  margin:0 0 20px;
+}
+@media (max-width:760px){ .start-title{ font-size:28px; } }
+
+.start-list{
+  list-style:none; margin:0; padding:0;
+  position:relative;
+}
+.start-list::before{
+  content:""; position:absolute; left:32px; top:0; bottom:0; width:2px;
+  background:linear-gradient(180deg, var(--brand), var(--brand-2));
+  opacity:.65;
+}
+
+.start-item{
+  display:grid; grid-template-columns:64px 1fr; gap:16px;
+  position:relative; margin:0 0 18px 0;
+}
+
+.start-node{ position:relative; height:100%; display:flex; align-items:flex-start; justify-content:center; }
+.start-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:34px; height:34px; border-radius:50%;
+  background:linear-gradient(90deg, var(--brand), var(--brand-2));
+  color:#0b1220; font-weight:900; box-shadow:0 6px 20px -8px var(--ring);
+  border:1px solid rgba(255,255,255,.25);
+  margin-top:6px; /* чуть опустили «иконку с цифрой» */
+}
+
+.start-card{
+  position:relative;
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px 18px 18px;
+  backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+}
+.start-card::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:linear-gradient(180deg, var(--brand), var(--brand-2));
+  border-radius:3px 0 0 3px; opacity:.9;
+}
+
+.start-card h3{
+  display:flex; align-items:center; gap:8px;
+  font-size:18px; margin:0 0 8px;
+}
+.start-card h3 .icon{
+  width:20px; height:20px; color:#fff; flex-shrink:0;
+}
+
+.start-card p{ margin:0; color:var(--muted); }
+
+/* Чипы для разделов (шаг 3) */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.chip{
+  display:inline-flex; align-items:center; padding:6px 10px; border-radius:999px;
+  border:1px solid var(--border); background:rgba(255,255,255,0.04);
+  font-size:13px; color:#fff;
+}
+
+/* Сетка логотипов площадок (шаг 2) */
+.platforms-grid{
+  display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px;
+  margin-top:12px;
+}
+@media (max-width:980px){ .platforms-grid{ grid-template-columns:repeat(3, 1fr); } }
+@media (max-width:640px){ .platforms-grid{ grid-template-columns:repeat(2, 1fr); } }
+
+.plat-chip{
+  display:inline-flex; align-items:center; justify-content:center; text-align:center;
+  padding:10px 12px; border-radius:12px; min-height:48px;
+  border:1px solid var(--border); color:#fff;
+  background:rgba(255,255,255,0.04);
+  font-weight:700; font-size:14px;
+}
+
+/* Если вставите <img> логотипы — они аккуратно впишутся */
+.platforms-grid img{
+  width:100%; height:48px; object-fit:contain;
+  border:1px solid var(--border); border-radius:12px;
+  background:rgba(255,255,255,0.04); padding:8px;
+}
 
 /* Footer */
 .site-footer{border-top:1px solid var(--border); background:rgba(0,0,0,0.35)}
