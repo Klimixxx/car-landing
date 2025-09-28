@@ -138,22 +138,36 @@ body{
   background-clip:text;
   color:transparent;
 }
-/* Блок статистики под кнопками в hero */
+/* Блок статистики под кнопками */
 .hero-stat {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-top: 16px;
   font-size: 16px;
   color: #fff;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
-/* Иконка автомобиля (строгая, не мультяшная) */
+/* Иконка автомобиля: белая, с круглой рамкой */
 .i.i-car {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/car-front-fill.svg') no-repeat center/contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05); /* легкая подложка */
+}
+
+.i.i-car::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  mask: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/car-front-fill.svg') no-repeat center;
+  -webkit-mask: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/car-front-fill.svg') no-repeat center;
+  background-color: #fff; /* сама иконка белая */
 }
 
