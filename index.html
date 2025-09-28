@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AuctionAfto — Авто-консультации, обучение перепродаже и снятие ограничений</title>
-  <meta name="description" content="Напишите в Telegram, пройдите обучение по перепродаже авто и получите помощь со снятием ограничений. Быстро, прозрачно, по делу." />
+  <title>AuctionAfto — Продажа авто с торгов</title>
+  <meta name="description" content="Ежедневно пополняем список авто с торгов и выкупаем их для клиентов. Без аккредитации и лишней бюрократии — всё сделаем за вас." />
   <meta name="theme-color" content="#070b14" />
-  <meta property="og:title" content="AuctionAfto — авто-эксперт рядом" />
-  <meta property="og:description" content="Консультации, обучение перепродаже и помощь со снятием ограничений. Напишите в Telegram — отвечу лично." />
+  <meta property="og:title" content="AuctionAfto — авто с торгов" />
+  <meta property="og:description" content="Консультации, обучение и выкуп авто с торгов под ключ." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/og-image.jpg" />
   <meta property="og:url" content="/" />
@@ -18,6 +18,7 @@
   <link rel="icon" href="/favicon.svg" />
 </head>
 <body>
+  <!-- фоновые свечения отключены в css, оставляем контейнеры, если вдруг вернём -->
   <div class="page-decor decor-1" aria-hidden="true"></div>
   <div class="page-decor decor-2" aria-hidden="true"></div>
 
@@ -36,9 +37,8 @@
         </svg>
         <span class="logo-type">AuctionA<span class="brand-f">f</span>to</span>
       </a>
-      <!-- Меню: оставили только раздел «Обучение» -->
       <nav class="nav" aria-label="Главная навигация">
-        <a href="#training">Обучение</a>
+        <a href="/training.html">Обучение</a>
       </nav>
       <a class="btn pill ghost tg-cta" href="https://t.me/vlasoff_14" target="_blank" rel="noopener">
         <span class="i i-tg" aria-hidden="true"></span> Написать
@@ -63,8 +63,7 @@
             <a class="btn xl primary" href="https://t.me/vlasoff_14" target="_blank" rel="noopener">
               <span class="i i-tg"></span> Написать в Telegram
             </a>
-            <a class="btn xl outline" href="#training">Программа обучения</a>
-            <!-- Кнопка «Снятие ограничений» удалена -->
+            <a class="btn xl outline" href="/training.html">Программа обучения</a>
           </div>
 
           <!-- Статистика под кнопками -->
@@ -76,70 +75,15 @@
       </div>
     </section>
 
-    <!-- CARDS -->
-    <section class="cards section">
-      <!-- Было grid-3, стало grid-1 чтобы растянуть единственный блок -->
-      <div class="container grid-1">
-        <article class="card" id="training">
-          <header class="card-h">
-            <span class="i i-graduation"></span>
-            <h2>Обучение перепродаже</h2>
-          </header>
-          <ul class="list">
-            <li>Где искать авто и как считать маржу</li>
-            <li>Проверки: юр. чистота, ограничения, диагностика</li>
-            <li>Переговоры, оформление и безопасные сделки</li>
-            <li>Чек-листы, шаблоны, реальные кейсы</li>
-          </ul>
-          <!-- Блок с ценой/подсказкой удалён -->
-          <a class="btn primary wide" href="/training.html">Узнать подробнее</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq section">
-      <div class="container">
-        <h2>Частые вопросы</h2>
-        <details>
-          <summary>Как быстро отвечаете?</summary>
-          <p>Обычно в течение 1–24 часов. Если срочно — добавьте слово «срочно» в начале сообщения.</p>
-        </details>
-        <details>
-          <summary>Нужна ли предоплата?</summary>
-          <p>Консультации — 100% предоплата. По обучению — фикс/поэтапно, как договоримся.</p>
-        </details>
-        <details>
-          <summary>Можно удалённо?</summary>
-          <p>Да. Многие задачи закрываются онлайн. По необходимости — созвон/встреча.</p>
-        </details>
-      </div>
-    </section>
+    <!-- По заданию удалены секции «Услуги/Обучение перепродаже» и «Частые вопросы» -->
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="foot-brand">
-        <strong>AuctionA<span class="brand-f">f</span>to</strong>
-        <span>Авто-эксперт</span>
-      </div>
-      <!-- Внизу тоже оставляем только «Обучение» -->
-      <nav class="foot-nav">
-        <a href="#training">Обучение</a>
-      </nav>
-      <div class="foot-contacts">
-        <a href="https://t.me/vlasoff_14" target="_blank" rel="noopener">@vlasoff_14</a>
-      </div>
-    </div>
-    <div class="copy">© <span id="y"></span> AuctionAfto</div>
-  </footer>
-
+  <!-- По заданию на главной подвал скрыт/удалён -->
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     },{threshold:0.15});
-    document.querySelectorAll('.section, .card').forEach(el=>io.observe(el));
+    document.querySelectorAll('.section').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
