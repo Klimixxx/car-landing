@@ -452,4 +452,22 @@ body{
   .results-list{gap:14px}
   .result-card{grid-template-columns:1fr}
 }
+/* ==== FIX: Results — отключаем zoom-эффект на ховере ==== */
+.result-media img,
+.result-media video{
+  transform: none !important;
+  transition: none !important;
+}
+
+/* на ховере тоже без масштабирования */
+.result-card:hover .result-media img,
+.result-card:hover .result-media video{
+  transform: none !important;
+}
+
+/* ==== FIX: секция, открытая по якорю (#results), сразу видима ==== */
+.section:target{
+  opacity: 1 !important;
+  transform: none !important;
+}
 
