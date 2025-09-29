@@ -29,6 +29,9 @@ body{
 .section{padding:72px 0; opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
 .section.in{opacity:1; transform:none}
 
+/* Секция видима, если открыта по якорю */
+.section:target{opacity:1 !important; transform:none !important}
+
 /* Header */
 .site-header{position:sticky; top:0; z-index:10; backdrop-filter:saturate(120%) blur(10px); background:rgba(7,11,20,0.55); border-bottom:1px solid var(--border)}
 .header-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
@@ -280,12 +283,12 @@ body{
 .result-media img,
 .result-media video{
   width:100%; height:100%; object-fit:cover; display:block;
-  transform:scale(1.02); transition:transform 10s linear;
+  transform: none; transition: none;
   filter:contrast(1.04) saturate(1.05);
 }
 .result-card:hover .result-media img,
 .result-card:hover .result-media video{
-  transform:scale(1.1); /* плавный “ken burns” */
+  transform:none;
 }
 
 .ribbon{
@@ -451,23 +454,5 @@ body{
   .btn.xl{padding:13px 16px; font-size:15px}
   .results-list{gap:14px}
   .result-card{grid-template-columns:1fr}
-}
-/* ==== FIX: Results — отключаем zoom-эффект на ховере ==== */
-.result-media img,
-.result-media video{
-  transform: none !important;
-  transition: none !important;
-}
-
-/* на ховере тоже без масштабирования */
-.result-card:hover .result-media img,
-.result-card:hover .result-media video{
-  transform: none !important;
-}
-
-/* ==== FIX: секция, открытая по якорю (#results), сразу видима ==== */
-.section:target{
-  opacity: 1 !important;
-  transform: none !important;
 }
 
