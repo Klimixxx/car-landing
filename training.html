@@ -480,6 +480,21 @@
       sections.forEach(el=>io.observe(el));
     } else {
       sections.forEach(el=>el.classList.add('in'));
+    // Fallback: если при обычной прокрутке какая-то секция не успела стать видимой — включаем вручную
+    function ensureVisibleOnScroll() {
+      var winH = window.innerHeight || document.documentElement.clientHeight;
+      document.querySelectorAll('.section').forEach(function(el){
+        if (el.classList.contains('in')) return;
+        var r = el.getBoundingClientRect();
+        if (r.top < winH * 0.9) {
+          el.classList.add('in');
+        }
+      });
+    }
+    window.addEventListener('scroll', ensureVisibleOnScroll, {passive:true});
+    window.addEventListener('load', ensureVisibleOnScroll);
+    ensureVisibleOnScroll();
+
     }
 
     // Автозапуск/пауза видео в «Наши результаты»
