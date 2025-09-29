@@ -590,4 +590,7 @@ body{
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 800;
 }
+.hero-image .hero-title {
+  white-space: nowrap; /* запрет переносов */
+}
 
