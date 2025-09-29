@@ -456,3 +456,17 @@ body{
   .result-card{grid-template-columns:1fr}
 }
 
+/* === Header: Telegram button as icon-only === */
+.tg-cta {
+  padding: 0 !important;
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+}
+.tg-cta .i { width: 20px; height: 20px; }
+
+/* на маленьких экранах делаем кругляш */
+@media (max-width: 760px){
+  .tg-cta { width: 40px; height: 40px; border-radius: 999px; }
+}
+
