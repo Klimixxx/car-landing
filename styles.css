@@ -752,3 +752,91 @@ body{
 }
 /* ====== /HERO: мобильная перестановка колонок ====== */
 
+/* === 1) Заголовок меньше на мобиле === */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(20px, 7vw, 28px); /* было больше — теперь точно поместится */
+    line-height: 1.15;
+  }
+}
+
+/* === 2) Текст "Программа обучения" по центру (и вообще любые hero-кнопки текста) === */
+.hero-actions--center .btn,
+.hero-cta {
+  display: inline-flex;            /* чтобы центрировать текст и иконку */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* На мобиле можно растянуть по ширине — уже добавляли, оставляю здесь для полноты */
+@media (max-width: 900px) {
+  .hero-actions--center .btn {
+    width: 100%;
+    max-width: 440px;
+  }
+  .hero-cta {
+    width: 100%;
+    max-width: 440px;
+  }
+}
+
+/* === 3) Приятная анимация кнопок (лёгкий подъём и тень) === */
+.btn {
+  position: relative;
+  transition: transform .2s ease, box-shadow .2s ease, background-position .3s ease;
+  will-change: transform, box-shadow;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(0,0,0,.10);
+}
+
+/* Негромкая «пульсация» только для основной CTA (перейти к объявлениям) */
+@media (prefers-reduced-motion: no-preference) {
+  .btn.primary {
+    animation: pulse-glow 2.8s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 rgba(124,58,237,0); }
+    50%      { box-shadow: 0 0 24px rgba(124,58,237,.25); } /* фиолетовое мягкое свечение */
+  }
+}
+
+/* Для outline делаем «сияние» только при наведении, чтобы не мигало постоянно */
+.btn.outline:hover {
+  box-shadow: 0 0 0 3px rgba(124,58,237,.15);
+}
+
+/* === 4) Добавляем стрелки к двум нужным кнопкам и лёгкое смещение при ховере === */
+/* Стрелка для "Перейти к объявлениям" (hero-cta) и для "Программа обучения" (кнопка слева) */
+.hero-cta::after,
+.hero-actions--center .btn::after {
+  content: "→";
+  margin-left: 10px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+.hero-cta:hover::after,
+.hero-actions--center .btn:hover::after {
+  transform: translateX(3px);
+}
+
+/* Чуть больше внутренние отступы, чтобы стрелке было комфортно */
+.hero-cta,
+.hero-actions--center .btn {
+  padding-right: 20px; /* если у тебя уже большие отступы — можно убрать эту строку */
+}
+
+/* На очень узких экранах уменьшим стрелку, чтобы не ломала строку */
+@media (max-width: 380px) {
+  .hero-cta::after,
+  .hero-actions--center .btn::after {
+    margin-left: 8px;
+  }
+}
