@@ -594,3 +594,17 @@ body{
   white-space: nowrap; /* запрет переносов */
 }
 
+/* Новый подзаголовок */
+.hero-subtitle {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+/* Кнопка под фото */
+.hero-cta {
+  margin-top: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
