@@ -572,7 +572,3 @@ body{
     margin-top: 22px;
   }
 }
-
-/* Hero primary button under image */
-.hero-primary-action{margin-top:12px;text-align:center}
-.hero-primary-action .btn{max-width:320px;width:100%;justify-content:center}
