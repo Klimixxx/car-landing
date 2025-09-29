@@ -1,4 +1,3 @@
-
 :root{
   --bg:#070b14;
   --text:#e6ebff;
@@ -267,6 +266,7 @@ body{
   .btn.xl{padding:13px 16px; font-size:15px}
   .container{padding:0 16px}
 }
+
 /* ===== RESULTS / Наши результаты ===== */
 .results-title{
   text-align:center; font-size:32px; margin:0 0 8px; letter-spacing:.2px;
@@ -346,38 +346,46 @@ body{
 }
 .sp-lead{ color:var(--muted); max-width:900px; margin:0 auto; }
 
+/* >>> изменено: сетка обёртки оставляем как было */
 .sp-wrap{
   display:grid; grid-template-columns: 1fr 380px; gap:24px; align-items:start; margin-top:20px;
 }
 @media (max-width:980px){ .sp-wrap{ grid-template-columns: 1fr; } }
 
-/* Таймлайн */
+/* Таймлайн — УВЕЛИЧИЛИ отступы, чтобы элементы не «ехали» */
 .sp-timeline{
   list-style:none; margin:0; padding:18px 0 0 0; position:relative;
   background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
   border:1px solid var(--border); border-radius:18px;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
-  padding-left:64px;
+  padding-left:100px;               /* было 64px */
 }
 .sp-timeline::before{
-  content:""; position:absolute; left:36px; top:24px; bottom:24px; width:2px;
+  content:""; position:absolute; left:72px; top:24px; bottom:24px; width:2px; /* было 36px */
   background:linear-gradient(180deg, var(--brand), var(--brand-2)); opacity:.7;
   border-radius:2px;
 }
-.sp-item{ position:relative; padding:10px 18px 12px 0; }
+.sp-item{ position:relative; padding:12px 18px 14px 0; }
 .sp-date{
-  position:absolute; left:-56px; top:8px; width:56px; text-align:right;
+  position:absolute; left:-92px; top:8px; width:80px; text-align:right; /* было -56px/56px */
   font-weight:800; color:#fff; opacity:.85;
 }
 .sp-dot{
-  position:absolute; left:30px; top:14px; width:14px; height:14px; border-radius:50%;
+  position:absolute; left:66px; top:14px; width:14px; height:14px; border-radius:50%; /* было 30px */
   background:linear-gradient(90deg, var(--brand), var(--brand-2)); border:1px solid rgba(255,255,255,.28);
   box-shadow:0 8px 22px -12px var(--ring);
   transform:scale(1); transition:transform .15s ease;
 }
 .sp-item:hover .sp-dot{ transform:scale(1.15); }
-.sp-text{ margin:0; color:var(--muted); }
+.sp-text{ margin:0; color:var(--muted); line-height:1.55; } /* добавили line-height */
 .sp-text strong{ color:#fff; }
+
+/* Выделение ключевых значений в подписи */
+.sp-emph{
+  background:linear-gradient(90deg, #a78bfa, #c084fc);
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; font-weight:800;
+}
 
 /* Карточка цены */
 .sp-card{ position:sticky; top:84px; }
@@ -401,8 +409,19 @@ body{
   background:linear-gradient(90deg, var(--brand), var(--brand-2));
   border:1px solid rgba(255,255,255,.28);
 }
+
+/* >>> доработано: старая цена + переносы */
 .sp-price{
-  display:flex; align-items:flex-end; gap:6px; margin-top:8px; margin-bottom:4px;
+  display:flex; align-items:flex-end; gap:10px; margin-top:8px; margin-bottom:4px;
+  flex-wrap:wrap;
+}
+.sp-price-old{
+  order:-1;
+  font-weight:900; font-size:18px; line-height:1;
+  color:rgba(255,255,255,.55);
+  text-decoration:line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(255,255,255,.4);
 }
 .sp-price-num{
   font-size:44px; font-weight:900; line-height:1;
@@ -432,4 +451,3 @@ body{
   transform:translateY(-2px);
   box-shadow:0 24px 70px -30px var(--ring), inset 0 1px 0 rgba(255,255,255,.06);
 }
-
