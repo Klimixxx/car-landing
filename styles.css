@@ -688,3 +688,67 @@ body{
     max-width: 420px;
   }
 }
+/* ====== HERO: мобильная перестановка колонок ====== */
+@media (max-width: 900px) {
+  /* Делаем контейнер колоночным и переупорядочиваем блоки */
+  .hero-inner {
+    display: flex;              /* безопасно, даже если у тебя уже grid — медиа перебьёт */
+    flex-direction: column;     /* сверху вниз */
+    gap: 24px;
+  }
+
+  /* ПРАВАЯ колонка (картинка) — ставим ПЕРВОЙ */
+  .hero-image {
+    order: -1;                  /* переносим наверх */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ЛЕВАЯ колонка (текст) — ниже */
+  .hero-text {
+    order: 0;
+  }
+
+  /* Визуальная аккуратность на мобиле */
+  .hero-title {
+    text-align: center;
+    font-size: clamp(22px, 6vw, 36px);
+    line-height: 1.15;
+    text-wrap: balance;
+    margin-bottom: 16px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+
+  /* Кнопка под фото — по центру и удобной ширины */
+  .hero-cta {
+    margin-top: 16px;
+    width: 100%;
+    max-width: 440px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Центруем и подравниваем левый текстовый блок */
+  .hero-subtitle,
+  .lead,
+  .hero-actions--center,
+  .hero-stat {
+    text-align: center;
+  }
+
+  /* Кнопка "Программа обучения" тоже аккуратно тянется */
+  .hero-actions--center .btn {
+    width: 100%;
+    max-width: 440px;
+  }
+}
+/* ====== /HERO: мобильная перестановка колонок ====== */
+
