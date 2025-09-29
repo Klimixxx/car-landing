@@ -499,5 +499,24 @@
       }
     }
   </script>
+<script>
+  // Если открылись сразу по якорю (например, #results) — сделать секцию видимой
+  (function () {
+    function revealHashSection() {
+      var hash = decodeURIComponent(location.hash || "");
+      if (!hash) return;
+      var el = document.querySelector(hash);
+      if (el && el.classList && el.classList.contains('section')) {
+        el.classList.add('in'); // для твоей анимации появления
+      }
+    }
+    // при первом открытии
+    revealHashSection();
+    // при смене якоря
+    window.addEventListener('hashchange', revealHashSection);
+  })();
+</script>
+
+  
 </body>
 </html>
