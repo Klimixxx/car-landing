@@ -8,7 +8,7 @@
   --border:rgba(255,255,255,0.12);
   --ring:rgba(122,162,255,0.55);
   --glass:rgba(255,255,255,0.06);
-  --danger:#ff3b3b; /* красный для буквы f */
+  --danger:#ff3b3b; /* красный для буквы f и перечёркнутой цены */
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -21,7 +21,7 @@ body{
 }
 
 /* Декор — оставлены на случай возврата подсветок, но сейчас невидимы */
-.page-decor{position:fixed; inset:auto; z-index:-1; pointer-events:none; filter:blur(60px); opacity:0} /* было .55 */
+.page-decor{position:fixed; inset:auto; z-index:-1; pointer-events:none; filter:blur(60px); opacity:0}
 .decor-1{width:520px; height:520px; top:-140px; right:-120px;}
 .decor-2{width:420px; height:420px; bottom:-140px; left:-90px;}
 
@@ -58,6 +58,12 @@ body{
 .btn.xl{padding:14px 18px; border-radius:16px}
 .btn.wide{width:100%; justify-content:center}
 
+/* anchors wrap on mobile nicer */
+.anchors .btn{min-width:230px}
+@media (max-width:760px){
+  .anchors .btn{min-width:unset; flex:1 1 100%}
+}
+
 /* Icons */
 .i{display:inline-block; width:18px; height:18px; background:currentColor; -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat}
 .i-tg{ -webkit-mask-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23fff" d="M9.04 15.38l-.37 5.22c.53 0 .76-.23 1.04-.5l2.51-2.4 5.2 3.8c.95.52 1.63.25 1.89-.87l3.43-16.1h0c.3-1.45-.52-2.02-1.44-1.67L1.2 9.82c-1.4.54-1.38 1.31-.24 1.66l5.13 1.6L18.9 6.53c.74-.48 1.39-.22.84.26"/></svg>') }
@@ -71,7 +77,7 @@ body{
 .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
 .grad-violet{background:linear-gradient(90deg, #a78bfa, #c084fc); -webkit-background-clip:text; background-clip:text; color:transparent}
 
-/* Hero-stat */
+/* Hero-stat (если используется) */
 .hero-stat {
   display: flex;
   align-items: center;
@@ -240,33 +246,6 @@ body{
   background:rgba(255,255,255,0.04); padding:8px;
 }
 
-/* Footer */
-.site-footer{border-top:1px solid var(--border); background:rgba(0,0,0,0.35)}
-.footer-inner{display:grid; grid-template-columns:1fr auto 1fr; gap:18px; padding:22px 20px; align-items:center}
-.foot-logo .logo-mark{width:26px; height:26px}     /* чуть компактнее знак в подвале */
-.foot-logo .logo-type{font-size:15px}
-.foot-nav{display:flex; gap:18px}
-.foot-contacts{display:flex; gap:16px}
-.copy{text-align:center; color:var(--muted); font-size:14px; border-top:1px solid var(--border); padding:14px 0}
-
-/* Адаптив */
-@media (max-width:980px){
-  .hero h1{font-size:36px}
-  .footer-inner{grid-template-columns:1fr; text-align:center}
-  .foot-nav, .foot-contacts{justify-content:center}
-}
-@media (max-width:760px){
-  .header-inner{height:60px}
-  .nav{display:none}
-  .tg-cta{padding:10px 14px}
-  .hero{padding-top:36px}
-  .section{padding:56px 0}
-  .hero h1{font-size:30px}
-  .hero .lead{font-size:16px}
-  .btn.xl{padding:13px 16px; font-size:15px}
-  .container{padding:0 16px}
-}
-
 /* ===== RESULTS / Наши результаты ===== */
 .results-title{
   text-align:center; font-size:32px; margin:0 0 8px; letter-spacing:.2px;
@@ -414,10 +393,10 @@ body{
 .sp-price-old{
   order:-1;
   font-weight:900; font-size:18px; line-height:1;
-  color:rgba(255,255,255,.55);
+  color:var(--danger);
   text-decoration:line-through;
   text-decoration-thickness: 2px;
-  text-decoration-color: rgba(255,255,255,.4);
+  text-decoration-color: var(--danger);
 }
 .sp-price-num{
   font-size:44px; font-weight:900; line-height:1;
@@ -446,4 +425,30 @@ body{
 .sp-ticket:hover{
   transform:translateY(-2px);
   box-shadow:0 24px 70px -30px var(--ring), inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* Footer — только логотип по центру */
+.site-footer{border-top:1px solid var(--border); background:rgba(0,0,0,0.35)}
+.footer-inner{display:grid; place-items:center; padding:22px 20px;}
+.footer-inner.only-logo{grid-template-columns:1fr;}
+.foot-logo .logo-mark{width:26px; height:26px}
+.foot-logo .logo-type{font-size:15px}
+.copy{text-align:center; color:var(--muted); font-size:14px; border-top:1px solid var(--border); padding:14px 0}
+
+/* Адаптив */
+@media (max-width:980px){
+  .hero h1{font-size:36px}
+  .container{padding:0 16px}
+}
+@media (max-width:760px){
+  .header-inner{height:60px}
+  .nav{display:none}
+  .tg-cta{padding:10px 14px}
+  .hero{padding-top:36px}
+  .section{padding:56px 0}
+  .hero h1{font-size:30px}
+  .hero .lead{font-size:16px}
+  .btn.xl{padding:13px 16px; font-size:15px}
+  .results-list{gap:14px}
+  .result-card{grid-template-columns:1fr}
 }
