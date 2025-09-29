@@ -470,3 +470,30 @@ body{
   .tg-cta { width: 40px; height: 40px; border-radius: 999px; }
 }
 
+/* === HERO: картинка внутри блока (без фонового изображения) === */
+/* не трогаем существующий flex, просто настраиваем раскладку с фото */
+.hero-inner { 
+  gap: 32px;               /* расстояние между текстом и фото */
+  flex-wrap: wrap;         /* на мобильных элементы становятся друг под другом */
+}
+
+/* текст и фото занимают ~поровну места на десктопе */
+.hero-text  { flex: 1 1 520px; }
+.hero-image { flex: 1 1 460px; min-width: 320px; }
+
+.hero-image img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 14px 28px -12px rgba(0,0,0,.45);
+  transition: transform .30s ease;
+}
+.hero-image img:hover{ transform: scale(1.02); }
+
+/* На телефонах фото уходит под текст и растягивается на всю ширину */
+@media (max-width: 760px){
+  .hero-text, .hero-image { flex-basis: 100%; }
+  .hero-image { margin-top: 22px; min-width: 0; }
+}
