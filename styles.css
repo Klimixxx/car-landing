@@ -608,3 +608,83 @@ body{
   justify-content: center;
   align-items: center;
 }
+/* Фиолетовый уже задаётся .grad-violet у тебя в проекте.
+   Если вдруг нет — раскомментируй и задай свои цвета. */
+/*
+.grad-violet {
+  background: linear-gradient(90deg, #a78bfa, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+*/
+
+/* Центровка кнопки под описанием */
+.hero-actions--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Блок с фото и заголовком уже настроен ранее */
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-image .hero-title {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+}
+
+/* Кнопка под фото */
+.hero-cta {
+  margin-top: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Мобильная адаптация Hero */
+@media (max-width: 900px) {
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero-text,
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-subtitle,
+  .lead,
+  .hero-actions--center,
+  .hero-stat {
+    text-align: center;
+  }
+
+  /* Чтоб заголовок не ломался некрасиво
+     и оставался читаемым на узких экранах */
+  .hero-title {
+    font-size: clamp(22px, 6vw, 36px);
+    line-height: 1.15;
+    text-wrap: balance; /* современные браузеры */
+  }
+
+  .hero-cta {
+    width: 100%;
+  }
+
+  /* Кнопка "Программа обучения" на мобиле тоже растянута аккуратно */
+  .hero-actions--center .btn {
+    width: 100%;
+    max-width: 420px;
+  }
+}
