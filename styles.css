@@ -449,10 +449,63 @@ body{
   .tg-cta{padding:10px 14px}
   .hero{padding-top:36px}
   .section{padding:56px 0}
+  .hero-inner{flex-direction:column; align-items:flex-start; gap:20px; min-height:auto}
   .hero h1{font-size:30px}
   .hero .lead{font-size:16px}
+  .hero-actions{width:100%; flex-direction:column; align-items:stretch}
+  .hero-actions .btn{width:100%; justify-content:center}
+  .hero-stat{justify-content:flex-start; font-size:15px}
   .btn.xl{padding:13px 16px; font-size:15px}
   .results-list{gap:14px}
   .result-card{grid-template-columns:1fr}
+}
+
+@media (max-width:640px){
+  .section{padding:46px 0}
+  .hero h1{font-size:28px}
+  .hero .lead{font-size:15px}
+  .hero-inner{gap:16px}
+  .hero-text{width:100%}
+  .hero-text p{margin-right:0}
+  .hero-stat{justify-content:center; text-align:center; flex-wrap:wrap}
+  .anchors .btn{flex:1 1 100%}
+  .results-title{font-size:26px}
+  .results-lead{font-size:15px}
+  .result-card{border-radius:16px}
+  .result-media{min-height:200px}
+  .result-head{flex-direction:column; align-items:flex-start; gap:4px}
+  .result-link{width:100%; justify-content:center}
+  .feature-grid{gap:16px}
+  .feature-body{padding:14px 16px 16px}
+  .start-title{font-size:26px}
+  .start-list::before{left:22px}
+  .start-item{grid-template-columns:46px 1fr; gap:12px}
+  .start-card{padding:14px 16px 16px}
+  .platforms-grid{gap:8px}
+  .sp-wrap{gap:18px}
+  .sp-card{position:static}
+  .sp-timeline{padding-left:28px}
+  .sp-timeline::before{left:16px}
+  .sp-item{padding:12px 16px 14px 0}
+  .sp-date{position:relative; left:0; top:0; width:auto; text-align:left; margin-bottom:6px; display:block}
+}
+
+@media (max-width:480px){
+  .container{padding:0 14px}
+  .hero h1{font-size:26px}
+  .hero .lead{font-size:14px}
+  .btn{font-size:15px}
+  .btn.xl{padding:12px 14px}
+  .results-lead{font-size:14px}
+  .result-media{min-height:180px}
+  .result-body{padding:14px 14px 16px}
+  .result-body p{font-size:14px}
+  .start-item{grid-template-columns:40px 1fr}
+  .start-num{width:30px; height:30px; margin-top:2px}
+  .sp-title{font-size:28px}
+  .sp-lead{font-size:15px}
+  .sp-price{gap:6px}
+  .sp-price-num{font-size:36px}
+  .sp-points{gap:6px}
 }
 
