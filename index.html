@@ -34,7 +34,6 @@
       <nav class="nav" aria-label="Главная навигация">
         <a href="/training.html">Обучение</a>
       </nav>
-      <!-- Иконка TG без текста -->
       <a class="btn pill ghost tg-cta" href="https://t.me/vlasoff_14" target="_blank" rel="noopener" aria-label="Написать в Telegram">
         <span class="i i-tg" aria-hidden="true"></span>
       </a>
@@ -42,15 +41,15 @@
   </header>
 
   <main id="top">
-    
     <!-- HERO -->
     <section class="hero section">
       <div class="container hero-inner">
-        
         <!-- Левая колонка: текст -->
         <div class="hero-text">
-          <!-- Новый подзаголовок -->
-          <h2 class="hero-subtitle">Покупка авто с торгов — под ключ</h2>
+          <!-- НОВОЕ: фиолетовым только "под ключ" -->
+          <h2 class="hero-subtitle">
+            Покупка авто с торгов — <span class="grad-violet">под ключ</span>
+          </h2>
 
           <p class="lead">
             Мы ежедневно пополняем и обновляем список автомобилей, продаваемых с торгов.
@@ -58,12 +57,11 @@
             участвовать в торгах, проверять машину на ограничения — мы всё это сделаем за вас.
           </p>
 
-          <!-- Оставляем только вторую кнопку -->
-          <div class="hero-actions">
+          <!-- НОВОЕ: центр под описанием -->
+          <div class="hero-actions hero-actions--center">
             <a class="btn xl outline" href="/training.html">Программа обучения</a>
           </div>
 
-          <!-- Статистика -->
           <div class="hero-stat">
             <span class="i i-car" aria-hidden="true"></span>
             <span>Более 1 000 000 автомобилей выгружено в наш телеграм-канал.</span>
@@ -75,19 +73,15 @@
           <h1 class="hero-title">Продажа Авто с торгов <span class="grad-violet">здесь!</span></h1>
           <img src="/assets/img/parking.jpg" alt="Автомобили с торгов" loading="lazy">
 
-          <!-- Кнопка перенесена под изображение -->
+          <!-- Кнопка под изображением -->
           <a class="btn xl primary hero-cta" href="#listings">Перейти к объявлениям</a>
         </div>
       </div>
     </section>
-
-
-    <!-- при необходимости здесь будет секция с объявлениями -->
-    <!-- <section class="section" id="listings">...</section> -->
+    <!-- /HERO -->
   </main>
 
   <script>
-    // плавное появление секций
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     },{threshold:0.15});
