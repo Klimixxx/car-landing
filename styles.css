@@ -573,13 +573,6 @@ body{
   }
 }
 
-/* === HERO: заголовок над фото, под фото — кнопка, затем текст === */
-.hero-inner{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
-.hero-title{font-size:44px;line-height:1.1;margin:0}
-.hero-image{width:100%;max-width:880px}
-.hero-image img{width:100%;height:auto;display:block;object-fit:cover;border-radius:18px;box-shadow:0 14px 28px -12px rgba(0,0,0,.45)}
-.hero-primary-action{margin-top:8px}
-.hero-primary-action .btn{width:100%;max-width:340px;justify-content:center}
-.hero-text{max-width:760px}
-.hero-subtitle{margin:6px 0 8px;font-size:22px;line-height:1.25;font-weight:800;background:linear-gradient(90deg,#a78bfa,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
-@media (max-width:760px){.hero-title{font-size:30px}.container{padding:0 16px}.section{padding:56px 0}}
+/* Hero primary button under image */
+.hero-primary-action{margin-top:12px;text-align:center}
+.hero-primary-action .btn{max-width:320px;width:100%;justify-content:center}
