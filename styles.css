@@ -532,3 +532,12 @@ body{
   .hero-image { max-width: 100%; }
 }
 
+/* Кнопка под фото в Hero */
+.hero-primary-action {
+  margin-top: 16px;
+}
+.hero-primary-action .btn {
+  width: 100%;
+  max-width: 320px;
+  justify-content: center;
+}
