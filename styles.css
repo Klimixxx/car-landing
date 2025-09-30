@@ -1528,4 +1528,38 @@ body{
     margin: 12px 0 14px;
   }
 }
+/* === FINAL FIX: выравниваем левую колонку под правую === */
+@media (min-width: 981px){
+  .hero-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr; /* две равные колонки + линия */
+    gap: 36px;
+    max-width: 1240px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .hero-col--left,
+  .hero-col--right {
+    width: 100%; /* обе половины строго равны */
+  }
+
+  /* одинаковые размеры фото */
+  .hero-col--left .hero-img,
+  .hero-col--right .hero-img {
+    width: 100%;
+    height: 360px;       /* одинаковая фиксированная высота */
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 14px 28px -12px rgba(0,0,0,.45);
+  }
+
+  /* описание растянуто по ширине */
+  .hero-col--left .m-edu-lead {
+    max-width: 720px;    /* шире чем раньше */
+    margin: 0 auto 18px; /* центрируем */
+    line-height: 1.7;    /* делаем текст «воздушнее» */
+    text-align: center;
+  }
+}
 
