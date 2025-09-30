@@ -1027,3 +1027,66 @@ body{
     width:100%; max-width:440px; margin:6px auto 0;
   }
 }
+
+/* === DESKTOP: показать и красиво оформить блок обучения справа в Hero === */
+
+/* Базовый вид под десктоп — не прячем .mobile-edu-under, задаём аккуратные отступы/ширину */
+.hero-image .mobile-edu-under{
+  display:block;
+  width:100%;
+  max-width: 880px;         /* та же максимальная ширина, что у фото */
+  margin: 18px auto 0;
+  text-align: left;         /* на ПК читается лучше слева */
+}
+
+/* Заголовок и описание */
+.hero-image .m-edu-title{
+  font-weight: 800;
+  font-size: clamp(22px, 1.8vw, 28px);
+  margin: 8px 0 8px;
+}
+.hero-image .m-edu-lead{
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+/* Фото под описанием — такие же радиусы/тень, как у главной картинки */
+.hero-image .mobile-edu-img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:18px;
+  box-shadow:0 14px 28px -12px rgba(0,0,0,.45);
+  margin: 8px 0 10px;
+  object-fit: cover;
+}
+
+/* Пруф-строка с иконкой (академическая шапка) */
+.hero-image .m-edu-proof{
+  display:flex; align-items:center; gap:10px;
+  margin: 8px 0 10px;
+  color:#fff;
+}
+.hero-image .m-edu-proof .i{ width:24px; height:24px; }
+
+/* Кнопка «Программа обучения» под пруфом */
+.hero-image .m-edu-btn{
+  display:inline-flex;
+  justify-content:center; align-items:center;
+  min-width: 240px;
+}
+
+/* Разделитель оставляем и на ПК */
+.mobile-sep{
+  height:2px; width:100%; max-width:880px; margin:16px auto 12px;
+  background:linear-gradient(90deg, var(--brand), var(--brand-2));
+  opacity:.85; border-radius:999px;
+  box-shadow:0 10px 30px -20px var(--ring);
+}
+
+/* ===== Адаптив: на мобильных используем уже существующие мобильные правила ===== */
+@media (max-width: 900px){
+  /* тут у тебя уже есть мобильные стили для .mobile-edu-under, .mobile-edu-img и т.д.
+     они останутся главными на узких экранах */
+}
+
