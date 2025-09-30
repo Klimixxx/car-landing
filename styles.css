@@ -1825,3 +1825,20 @@ body{
   z-index: 1;
   color: #fff;
 }
+/* === Mini-card title box === */
+.mini-card-head {
+  position: relative;
+  background: rgba(167, 139, 250, 0.15); /* фиолетовый фон с прозрачностью */
+  border: 1px solid var(--brand-2);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.mini-card-head h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand-2); /* фиолетовый */
+}
