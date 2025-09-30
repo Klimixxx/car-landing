@@ -562,5 +562,21 @@
 </script>
 
   
+
+  <script>
+    // Reveal sections when they enter the viewport (fixes invisible blocks on mobile)
+    (function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      },{threshold:0.15});
+      document.querySelectorAll('.section').forEach(el=>io.observe(el));
+      // Fallback: ensure hash-targeted section is visible immediately
+      if(location.hash){
+        const t = document.querySelector(location.hash);
+        if(t && t.classList.contains('section')){ t.classList.add('in'); }
+      }
+    })();
+  </script>
+
 </body>
 </html>
