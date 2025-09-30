@@ -672,11 +672,7 @@ body{
 
   /* Чтоб заголовок не ломался некрасиво
      и оставался читаемым на узких экранах */
-  .hero-title {
-    font-size: clamp(22px, 6vw, 36px);
-    line-height: 1.15;
-    text-wrap: balance; /* современные браузеры */
-  }
+  
 
   .hero-cta {
     width: 100%;
@@ -711,13 +707,7 @@ body{
   }
 
   /* Визуальная аккуратность на мобиле */
-  .hero-title {
-    text-align: center;
-    font-size: clamp(22px, 6vw, 36px);
-    line-height: 1.15;
-    text-wrap: balance;
-    margin-bottom: 16px;
-  }
+ 
 
   .hero-image img {
     width: 100%;
@@ -843,8 +833,10 @@ body{
 }
 @media (max-width: 480px) {
   .hero-title {
-    font-size: clamp(18px, 6vw, 24px); /* ещё меньше чем раньше */
+    font-size: clamp(18px, 5vw, 22px); /* компактный размер для мобилы */
     line-height: 1.2;
     text-align: center;
+    white-space: normal; /* чтобы переносился, если не помещается */
   }
 }
+
