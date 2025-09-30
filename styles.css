@@ -1488,3 +1488,152 @@ body{
   .hero-col--right .hero-btn{ align-self: flex-start; }  /* справа — тоже влево */
 }
 
+/* ===== HERO v2 (BEGIN) ===== */
+:root{
+  --hero2-bg: transparent;          /* фон секции — прозрачно, сайт тёмный */
+  --hero2-text: #d8deea;            /* основной текст */
+  --hero2-muted: #9aa3b2;           /* подписи */
+  --hero2-title: #eaf0ff;           /* заголовки */
+  --hero2-accent: #b389ff;          /* фиолетовый "здесь!" */
+  --hero2-line: rgba(146,153,170,.22); /* вертикальная линия */
+  --hero2-btn-bg: #1f2a44;          /* ghost hover */
+  --hero2-primary-from: #6c7cff;    /* градиент кнопки */
+  --hero2-primary-to:   #8e5cff;
+  --hero2-shadow: 0 0 0 1px rgba(255,255,255,.04), 0 8px 30px rgba(0,0,0,.35);
+  --hero2-radius: 16px;
+}
+
+.hero2{
+  background: var(--hero2-bg);
+  padding: clamp(32px, 4vw, 56px) 0 48px;
+}
+
+.hero2-container{
+  max-width: 1120px; /* под референс */
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero2-grid{
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr; /* левая | линия | правая */
+  align-items: start;
+  gap: clamp(28px, 4vw, 40px);
+}
+
+.hero2-col{
+  color: var(--hero2-text);
+}
+
+.hero2-title{
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: .2px;
+  color: var(--hero2-title);
+  font-size: clamp(28px, 2.2vw + 10px, 44px);
+  margin: 0 0 14px;
+}
+
+.hero2-title--right{
+  text-align: left;
+}
+
+.hero2-accent{
+  color: var(--hero2-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 900;
+}
+
+.hero2-text{
+  color: var(--hero2-text);
+  opacity: .9;
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 560px;
+  margin: 0 0 20px;
+}
+
+.hero2-figure{
+  margin: 16px 0 10px;
+}
+
+.hero2-figure img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--hero2-radius);
+  box-shadow: var(--hero2-shadow);
+}
+
+.hero2-caption{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--hero2-muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.hero2-capicon{
+  display: inline-flex;
+  width: 26px; height: 26px;
+  align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  color: var(--hero2-accent);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+.hero2-divider{
+  width: 1px;
+  background: var(--hero2-line);
+  min-height: 100%;
+}
+
+.hero2-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: transform .15s ease, filter .2s ease, background .2s ease;
+  will-change: transform, filter;
+}
+
+.hero2-btn:hover{ transform: translateY(-1px); }
+
+.hero2-btn--ghost{
+  color: var(--hero2-title);
+  background: rgba(255,255,255,.06);
+  box-shadow: var(--hero2-shadow);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.hero2-btn--ghost:hover{
+  background: var(--hero2-btn-bg);
+}
+
+.hero2-btn--primary{
+  color: white;
+  background: linear-gradient(90deg,var(--hero2-primary-from),var(--hero2-primary-to));
+  box-shadow: 0 6px 20px rgba(124,106,255,.35);
+  border: none;
+}
+
+.hero2-arrow{ display: inline-flex; }
+
+@media (max-width: 980px){
+  .hero2-grid{
+    grid-template-columns: 1fr;   /* Мобилка: друг под другом */
+  }
+  .hero2-divider{ display: none; }
+  .hero2-title{ font-size: clamp(26px, 4.8vw, 36px); }
+  .hero2-text{ max-width: none; }
+  .hero2-btn{ width: 100%; justify-content: center; }
+}
+/* ===== HERO v2 (END) ===== */
