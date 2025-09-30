@@ -1242,4 +1242,76 @@ body{
     margin-left: 0;
   }
 }
+/* ===== DESKTOP HERO: две колонки + вертикальный разделитель. Мобилу не меняем. ===== */
+@media (min-width: 981px){
+  /* сетка 2 колонки */
+  .hero-two-col{
+    display:grid;
+    grid-template-columns: 1fr minmax(0,24px) 1fr; /* левая | линия | правая */
+    gap: 32px;
+    align-items:start;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+  /* колонки */
+  .hero-col{ display:flex; flex-direction:column; align-items:flex-start; }
+  .hero-col--left  { grid-column: 1; }
+  .hero-col--right { grid-column: 3; }
+
+  /* вертикальная линия */
+  .hero-v-sep{
+    grid-column: 2;
+    width:1px;
+    background: linear-gradient(180deg, var(--brand), var(--brand-2));
+    opacity:.35;
+    border-radius:999px;
+  }
+
+  /* единые размеры заголовков */
+  .m-edu-title,
+  .hero-title{
+    font-weight:800;
+    font-size: clamp(28px, 2.2vw, 40px);
+    line-height:1.15;
+    margin:0 0 10px;
+    text-align:left;
+  }
+
+  /* единые размеры описаний */
+  .m-edu-lead,
+  .hero-lead{
+    font-size:18px;
+    line-height:1.6;
+    color:var(--muted);
+    margin:0 0 14px;
+    text-align:left;
+  }
+
+  /* единые параметры изображений */
+  .hero-img{
+    width:100%;
+    aspect-ratio:16/9;     /* одинаковая высота и пропорции */
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 14px 28px -12px rgba(0,0,0,.45);
+    margin:8px 0 10px;
+  }
+
+  /* пруф-строки (иконка + текст) — одинаковый стиль */
+  .hero-proof{
+    display:flex; align-items:center; gap:10px;
+    margin:8px 0 10px;
+    color:#fff;
+    opacity:.95;
+  }
+  .hero-proof .i{ width:24px; height:24px; }
+
+  /* кнопки — одинаковые габариты */
+  .hero-btn{
+    display:inline-flex; justify-content:center; align-items:center;
+    min-height:48px; min-width:240px; padding:14px 18px;
+  }
+}
+
+/* Мобайл остаётся как был (элементы стакаются). Ничего не меняем. */
 
