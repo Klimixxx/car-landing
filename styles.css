@@ -1313,5 +1313,45 @@ body{
   }
 }
 
-/* Мобайл остаётся как был (элементы стакаются). Ничего не меняем. */
+/* === DESKTOP TWEAKS for HERO (лево/право) — мобильную версию не трогаем === */
+@media (min-width: 981px){
+
+  /* Чуть шире вся зона героя, чтобы хватало места под однострочный H1 */
+  .hero-two-col{ max-width: 1240px; }
+
+  /* Заголовки по центру над своими описаниями */
+  .hero-col--left  .m-edu-title,
+  .hero-col--right .hero-title{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* Правая часть: сделать заголовок в одну строку */
+  .hero-col--right .hero-title{
+    white-space: nowrap;
+    font-size: clamp(28px, 2.0vw, 36px); /* чуть компактнее, чтобы гарантированно влезал */
+  }
+
+  /* ОПИСАНИЯ: «растянуть» (чуть шире), выровнять по центру и сделать более воздушными */
+  .hero-col .m-edu-lead,
+  .hero-col .hero-lead{
+    max-width: 600px;          /* было уже компактно – делаем шире */
+    margin: 0 auto 16px;       /* центрируем под заголовком */
+    text-align: center;
+    line-height: 1.7;          /* «растянули» текст по межстрочному интервалу */
+    letter-spacing: .1px;
+  }
+
+  /* ФОТО: сделать чуть больше за счёт более «высокой» пропорции */
+  .hero-col .hero-img{
+    aspect-ratio: 3 / 2;       /* было 16/9 → стало выше и заметно крупнее */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 14px 28px -12px rgba(0,0,0,.45);
+    margin: 10px 0 12px;
+  }
+}
+
 
