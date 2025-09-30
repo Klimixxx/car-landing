@@ -25,7 +25,12 @@
     <div class="container header-inner">
       <a href="#top" class="logo" aria-label="AuctionAfto">
         <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-          <defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+          <defs>
+            <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#60a5fa"/>
+              <stop offset="1" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
           <rect x="4" y="4" width="24" height="24" rx="8" fill="url(#g)"/>
           <path d="M11 17.5l3 3 7-7" fill="none" stroke="#0b1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -41,66 +46,46 @@
   </header>
 
   <main id="top">
-    <!-- HERO -->
+    <!-- HERO (унифицирован под мобильный вид и на ПК) -->
     <section class="hero section">
       <div class="container hero-inner">
-        <!-- Левая колонка: текст -->
-        <div class="hero-text">
-          <h2 class="hero-subtitle">
-            Покупка авто с торгов — <span class="grad-violet">под ключ</span>
-          </h2>
-
-          <p class="lead">
-            Мы ежедневно пополняем и обновляем список автомобилей, продаваемых с торгов.
-            Наша работа заключается в том, что мы выкупаем авто для наших клиентов. Вам не нужно проходить аккредитацию,
-            участвовать в торгах, проверять машину на ограничения — мы всё это сделаем за вас.
-          </p>
-
-          <div class="hero-actions hero-actions--center">
-            <a class="btn xl outline" href="/training.html">Программа обучения</a>
-          </div>
-
-          <!-- ОРИГИНАЛЬНАЯ статистика (лево) — будет скрыта на мобиле через CSS -->
-          <div class="hero-stat">
-            <span class="i i-car" aria-hidden="true"></span>
-            <span>Более 1 000 000 автомобилей выгружено в наш телеграм-канал.</span>
-          </div>
-        </div>
-
-        <!-- Правая колонка: фото + заголовок + мобильная статистика + кнопка -->
+        <!-- Оставляем только «мобильную» структуру -->
         <div class="hero-image">
           <h1 class="hero-title">Продажа Авто с торгов <span class="grad-violet">здесь!</span></h1>
 
-          <p class="lead lead--mobile">
+          <!-- Описание сразу под H1 (без класса lead--mobile, чтобы показывалось и на ПК) -->
+          <p class="lead">
             Мы ежедневно пополняем и обновляем список автомобилей, продаваемых с торгов. Наша работа заключается в том, что мы выкупаем авто для наших клиентов. Вам не нужно проходить аккредитацию, участвовать в торгах, проверять машину на ограничения — мы всё это сделаем за вас.
           </p>
-          <img src="/assets/img/parking.jpg" alt="Автомобили с торгов" loading="lazy">
 
-          <!-- МОБИЛЬНАЯ версия статистики -->
-          <div class="hero-stat hero-stat--mobile" aria-hidden="false">
-            <span class="i i-car" aria-hidden="true"></span>
-            <span>Более 1 000 000 автомобилей выгружено в наш телеграм-канал.</span>
-          </div>
+          <!-- Фото под описанием -->
+          <img src="/assets/img/parking.jpg" alt="Автомобили с торгов" loading="lazy">
 
           <!-- Кнопка под изображением -->
           <a class="btn xl primary hero-cta" href="https://t.me/auctionafto" target="_blank" rel="noopener">
             Перейти к объявлениям
           </a>
-        
+
+          <!-- Разделитель -->
           <div class="mobile-sep" aria-hidden="true"></div>
 
-          <!-- MOBILE-ONLY: блок обучения под разделяющей линией -->
+          <!-- Блок «Обучение» (мобильный вид — теперь и для десктопа) -->
           <div class="mobile-edu-under">
             <h2 class="m-edu-title grad-violet">Обучение</h2>
-            <p class="m-edu-lead">Разбираем рынок торгов, процедуры выкупа и практические кейсы — от первых шагов до заработка на услугах и сделках.</p>
+            <p class="m-edu-lead">
+              Разбираем рынок торгов, процедуры выкупа и практические кейсы — от первых шагов до заработка на услугах и сделках.
+            </p>
 
+            <!-- Фото обучения под описанием -->
             <img class="mobile-edu-img" src="/assets/img/auction.jpg" alt="Аукцион, обучение торгам" loading="lazy">
 
+            <!-- Пруф-строка -->
             <div class="m-edu-proof">
               <span class="i i-cap" aria-hidden="true"></span>
               <span>100+ учеников прошли наше обучение и зарабатывают на торгах</span>
             </div>
 
+            <!-- Кнопка программы обучения -->
             <a class="btn xl outline m-edu-btn" href="/training.html">Программа обучения</a>
           </div>
         </div>
@@ -110,6 +95,7 @@
   </main>
 
   <script>
+    // Появление секций при скролле (у вас уже используется)
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     },{threshold:0.15});
