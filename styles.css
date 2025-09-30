@@ -1766,3 +1766,37 @@ body{
 @media(max-width:640px){
   .mini-cards{ grid-template-columns:1fr; }
 }
+/* === TRAINING HERO — мобильная карусель из мини-карточек === */
+@media (max-width: 760px){
+  .mini-cards-wrap{
+    overflow: hidden;             /* обрезаем «лишнее» по краям */
+  }
+  .mini-cards{
+    display: flex;                /* вместо grid -> горизонтальная лента */
+    gap: 12px;
+    overflow-x: auto;             /* горизонтальный скролл/свайп */
+    scroll-snap-type: x mandatory;/* снап к карточке */
+    -webkit-overflow-scrolling: touch;
+    padding: 0 14px 8px;          /* внутренние отступы чтобы карта «дышала» */
+  }
+  .mini-cards::-webkit-scrollbar{ display:none; } /* без полосы прокрутки */
+
+  .mini-card{
+    flex: 0 0 88%;                /* одна карточка «на экран» */
+    scroll-snap-align: center;    /* центрируем при остановке */
+    min-width: 280px;             /* защита от слишком узких экранов */
+  }
+}
+
+/* === Заголовок в одну строку на мобильных === */
+.training-hero-title{
+  white-space: nowrap;            /* не переносить */
+}
+@media (max-width: 760px){
+  .training-hero-title{
+    white-space: nowrap !important;       /* перебиваем другие правила */
+    font-size: clamp(20px, 6vw, 26px);    /* уменьшаем, чтобы вместился */
+    line-height: 1.15;
+    text-align: center;
+  }
+}
