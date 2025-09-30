@@ -962,3 +962,37 @@ body{
   /* Скрываем левую исходную "Программа обучения", т.к. дублируем её ниже */
   .hero-text .hero-actions--center{ display:none !important; }
 }
+
+
+/* ==== MOBILE HERO LAYOUT — tidy & equal image sizes ==== */
+@media (max-width: 900px){
+  /* Place photo first, text below — already handled; just center text column */
+  .hero-text{ display:flex; flex-direction:column; align-items:center; }
+  .hero-training-mobile{ width:100%; max-width:880px; }
+
+  /* Title "Обучение" and copy */
+  .hero-subtitle--mobile{ display:block; margin:8px 0 8px; font-size:clamp(22px,5.2vw,26px); }
+  .edu-lead--mobile{ display:block; color:var(--muted); text-align:center; margin:0 0 12px; padding:0 10px; }
+
+  /* Make training image same visual size as main hero photo */
+  .mobile-edu-img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:18px;
+    box-shadow:0 14px 28px -12px rgba(0,0,0,.45);
+    margin:6px 0 10px;
+  }
+
+  /* Proof row above "Программа обучения" */
+  .learn-stat--mobile{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    margin:10px 0 8px; color:#fff; text-align:center;
+  }
+  .learn-stat--mobile .i{ width:28px; height:28px; }
+
+  /* Decorative divider under "Перейти к объявлениям" button */
+  .mobile-sep{ height:2px; width:100%; max-width:880px; margin:16px auto 12px;
+               background:linear-gradient(90deg, var(--brand), var(--brand-2)); opacity:.85; border-radius:999px;
+               box-shadow:0 10px 30px -20px var(--ring); }
+}
