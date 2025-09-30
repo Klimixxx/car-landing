@@ -1800,3 +1800,28 @@ body{
     text-align: center;
   }
 }
+.mini-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.mini-card-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.mini-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6); /* затемняем для читаемости текста */
+}
+
+.mini-card-head,
+.mini-card .btn {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
