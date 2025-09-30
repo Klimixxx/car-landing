@@ -1354,4 +1354,80 @@ body{
   }
 }
 
+/* ===== DESKTOP HERO: две колонки, равные размеры левого и правого блоков ===== */
+@media (min-width: 981px){
+  /* сетка */
+  .hero-two-col{
+    display:grid;
+    grid-template-columns: 1fr minmax(0,28px) 1fr; /* левая | линия | правая */
+    gap: 36px;
+    max-width: 1240px; /* чуть шире, чтобы всё дышало и H1 влезал */
+    margin: 0 auto;
+  }
+
+  /* колонки — центруем содержимое, чтобы текст и кнопки стояли под заголовками */
+  .hero-col{ display:flex; flex-direction:column; align-items:center; text-align:center; }
+  .hero-col--left  { grid-column: 1; }
+  .hero-col--right { grid-column: 3; }
+
+  /* вертикальная линия */
+  .hero-v-sep{
+    grid-column: 2;
+    width:1px; border-radius:999px;
+    background:linear-gradient(180deg, var(--brand), var(--brand-2));
+    opacity:.35;
+  }
+
+  /* ОДИНАКОВЫЕ размеры заголовков */
+  .m-edu-title,
+  .hero-title{
+    font-weight:800;
+    font-size: clamp(30px, 2.35vw, 42px);
+    line-height:1.15;
+    margin:0 0 12px;
+  }
+
+  /* Правая часть — заголовок в одну строку гарантированно */
+  .hero-col--right .hero-title{
+    white-space: nowrap;
+  }
+
+  /* ОДИНАКОВЫЕ параметры описаний (растянул, центрировал, ограничил одинаковой шириной) */
+  .hero-lead{
+    font-size:18px;
+    line-height:1.7;      /* «воздушнее» */
+    letter-spacing:.1px;
+    color:var(--muted);
+    max-width: 620px;     /* одинаковая ширина текста слева/справа */
+    margin: 0 auto 16px;  /* центрируем под заголовком */
+  }
+
+  /* ОДИНАКОВЫЕ фото (чуть крупнее) */
+  .hero-img{
+    width:100%;
+    aspect-ratio: 4 / 3;          /* крупнее, чем 16/9 — смотрится «весомее» */
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 14px 28px -12px rgba(0,0,0,.45);
+    margin: 12px 0 14px;
+  }
+
+  /* ОДИНАКОВЫЕ пруф-строки (иконка + текст) */
+  .hero-proof{
+    display:flex; align-items:center; gap:10px;
+    color:#fff; opacity:.95;
+    margin: 8px 0 14px;
+  }
+  .hero-proof .i{ width:24px; height:24px; }
+
+  /* ОДИНАКОВЫЕ кнопки */
+  .hero-btn{
+    display:inline-flex; justify-content:center; align-items:center;
+    min-height: 52px;
+    min-width: 260px;
+    padding: 14px 22px;
+  }
+}
+
+/* мобилку не трогаем — остаётся как была */
 
