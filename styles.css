@@ -1429,5 +1429,40 @@ body{
   }
 }
 
-/* мобилку не трогаем — остаётся как была */
+/* === DESKTOP FIX: левый блок = правому по размерам; элементы слева растянуты по фото === */
+@media (min-width: 981px){
+  /* 1) Колонки: растягиваем элементы на всю ширину колонки (а не по центру по содержимому) */
+  .hero-col{ align-items: stretch; text-align: center; }
+
+  /* 2) Фото слева и справа — одинаковая ширина и пропорции */
+  .hero-col .hero-img{
+    width: 100%;
+    aspect-ratio: 4 / 3;           /* такая же «высокая» картинка, как справа */
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 14px 28px -12px rgba(0,0,0,.45);
+    margin: 12px 0 14px;
+    align-self: stretch;           /* ключевое — тянем на полную ширину колонки */
+  }
+
+  /* 3) Описание, пруф и кнопка слева — тянем по ширине фото (как справа) */
+  .hero-col--left .hero-lead,
+  .hero-col--left .hero-proof,
+  .hero-col--left .hero-btn{
+    max-width: none;               /* не ограничиваем 620px */
+    width: 100%;
+    margin-left: 0; margin-right: 0;
+  }
+
+  /* 4) Чтобы текст не «лип» к краям, даём внутренние поля как у правой колонки */
+  .hero-col--left .hero-lead{ padding: 0 8px; }
+  .hero-col--left .hero-proof{ justify-content: center; }
+
+  /* 5) Для симметрии — одинаковая ширина кнопок */
+  .hero-col--left .hero-btn,
+  .hero-col--right .hero-btn{
+    min-width: 260px;
+  }
+}
+
 
