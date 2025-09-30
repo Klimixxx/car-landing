@@ -1494,4 +1494,38 @@ body{
     border-radius: 18px;
   }
 }
+/* === FIX: левая колонка = правая по размеру === */
+@media (min-width: 981px){
+  .hero-two-col{
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr; /* левая = правая, по 50% */
+    gap: 36px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .hero-col--left,
+  .hero-col--right {
+    width: 100%;          /* обе колонки занимают свои 50% */
+  }
+
+  .hero-v-sep{
+    grid-column: 2;
+    width: 1px;
+    background: linear-gradient(180deg, var(--brand), var(--brand-2));
+    opacity: .35;
+    border-radius: 999px;
+  }
+
+  /* фото одинакового размера */
+  .hero-col--left .hero-img,
+  .hero-col--right .hero-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;   /* одинаковое соотношение сторон */
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 14px 28px -12px rgba(0,0,0,.45);
+    margin: 12px 0 14px;
+  }
+}
 
