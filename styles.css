@@ -1749,3 +1749,20 @@ body{
    .grad-violet — фиолетовый текст (градиент),
    .brand-f — красная буква f в логотипе/названии. */
 
+/* Центровка блока мини-карточек */
+.mini-cards-wrap{
+  display:flex;
+  justify-content:center;
+}
+
+.mini-cards{
+  max-width:800px; /* ограничиваем ширину блока */
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:16px;
+}
+
+@media(max-width:640px){
+  .mini-cards{ grid-template-columns:1fr; }
+}
