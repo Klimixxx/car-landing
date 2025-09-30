@@ -46,7 +46,7 @@
       <div class="container hero-inner">
         <!-- Левая колонка: текст -->
         <div class="hero-text">
-          <!-- НОВОЕ: фиолетовым только "под ключ" -->
+          <!-- фиолетовым только "под ключ" -->
           <h2 class="hero-subtitle">
             Покупка авто с торгов — <span class="grad-violet">под ключ</span>
           </h2>
@@ -57,28 +57,34 @@
             участвовать в торгах, проверять машину на ограничения — мы всё это сделаем за вас.
           </p>
 
-          <!-- НОВОЕ: центр под описанием -->
+          <!-- Кнопка "Программа обучения" (в левом блоке) -->
           <div class="hero-actions hero-actions--center">
             <a class="btn xl outline" href="/training.html">Программа обучения</a>
           </div>
 
+          <!-- ОРИГИНАЛЬНАЯ статистика (лево) — будет скрыта на мобиле через CSS -->
           <div class="hero-stat">
             <span class="i i-car" aria-hidden="true"></span>
             <span>Более 1 000 000 автомобилей выгружено в наш телеграм-канал.</span>
           </div>
         </div>
 
-        <!-- Правая колонка: фото + заголовок + кнопка -->
+        <!-- Правая колонка: фото + заголовок + мобильная статистика + кнопка -->
         <div class="hero-image">
           <h1 class="hero-title">Продажа Авто с торгов <span class="grad-violet">здесь!</span></h1>
 
           <img src="/assets/img/parking.jpg" alt="Автомобили с торгов" loading="lazy">
 
+          <!-- МОБИЛЬНАЯ версия статистики (вставлена прямо над кнопкой) -->
+          <div class="hero-stat hero-stat--mobile" aria-hidden="false">
+            <span class="i i-car" aria-hidden="true"></span>
+            <span>Более 1 000 000 автомобилей выгружено в наш телеграм-канал.</span>
+          </div>
+
           <!-- Кнопка под изображением -->
           <a class="btn xl primary hero-cta" href="https://t.me/auctionafto" target="_blank" rel="noopener">
-  Перейти к объявлениям
-</a>
-
+            Перейти к объявлениям
+          </a>
         </div>
       </div>
     </section>
