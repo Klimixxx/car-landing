@@ -1637,3 +1637,7 @@ body{
   .hero2-btn{ width: 100%; justify-content: center; }
 }
 /* ===== HERO v2 (END) ===== */
+/* Фиолетовый цвет для заголовка Обучение */
+.hero2-title--violet {
+  color: #b389ff;
+}
