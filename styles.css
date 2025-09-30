@@ -1090,3 +1090,73 @@ body{
      они останутся главными на узких экранах */
 }
 
+/* === DESKTOP-ONLY: Hero в две колонки + вертикальная разделительная линия === */
+@media (min-width: 981px){
+  /* контейнер правой колонки Hero (у тебя внутри весь мобильный стек) превращаем в две колонки */
+  .hero-image{
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* левая + правая */
+    gap: 32px;
+    align-items: start;
+    position: relative;              /* для вертикальной линии */
+    text-align: left;                /* читаемее на ПК */
+    max-width: 1160px;               /* опционально: чтобы не расползалось */
+    margin: 0 auto;
+  }
+
+  /* вертикальная разделительная линия по центру */
+  .hero-image::before{
+    content:"";
+    position:absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(180deg, var(--brand), var(--brand-2));
+    opacity: .35;
+    border-radius: 999px;
+    transform: translateX(-0.5px);
+    pointer-events: none;
+  }
+
+  /* Явно раскладываем элементы по колонкам */
+  .hero-image > .hero-title,
+  .hero-image > .lead,
+  .hero-image > img:not(.mobile-edu-img),
+  .hero-image > .hero-cta,
+  .hero-image > .mobile-sep,
+  .hero-image > .hero-stat--mobile{
+    grid-column: 1;          /* всё «верхнее» — слева */
+  }
+
+  /* Блок обучения — целиком в правую колонку */
+  .hero-image > .mobile-edu-under{
+    grid-column: 2;
+    align-self: start;
+  }
+
+  /* Немного подправим отступы на ПК (мягко, без влияния на мобилу) */
+  .hero-image > .lead{ margin: 6px 0 14px; color: var(--muted); }
+  .hero-image > img:not(.mobile-edu-img){
+    border-radius: 18px; box-shadow: 0 14px 28px -12px rgba(0,0,0,.45);
+  }
+  .hero-image > .hero-cta{ margin-top: 16px; }
+
+  /* Разделитель под CTA слева пусть будет чуть уже */
+  .hero-image > .mobile-sep{
+    max-width: 520px;
+    margin-left: 0;
+  }
+
+  /* В правой колонке аккуратнее выравнивание и отступы */
+  .hero-image .mobile-edu-under{ text-align: left; margin-top: 0; }
+  .hero-image .m-edu-title{ margin-top: 0; }
+  .hero-image .mobile-edu-img{
+    width: 100%; height: auto; border-radius: 18px;
+    box-shadow: 0 14px 28px -12px rgba(0,0,0,.45);
+    margin: 8px 0 10px;
+  }
+  .hero-image .m-edu-proof{ margin: 8px 0 10px; }
+  .hero-image .m-edu-btn{ min-width: 240px; }
+}
+
+
