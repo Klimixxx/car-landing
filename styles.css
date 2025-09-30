@@ -1313,5 +1313,78 @@ body{
   }
 }
 
-/* Мобайл остаётся как был (элементы стакаются). Ничего не меняем. */
+/* ====================== HERO — MOBILE (как на твоём первом скрине) ====================== */
+@media (max-width: 980px){
+  .hero-two-col{ display:block; }
+  .hero-col{ display:block; text-align:left; }
+
+  .hero-title{ font-weight:800; font-size:clamp(24px, 6vw, 32px); line-height:1.15; margin:0 0 10px; }
+  .hero-lead{ font-size:16px; line-height:1.7; color:var(--muted); margin:0 0 16px; }
+
+  .hero-img{
+    display:block; width:100%; height:auto;
+    border-radius:18px; box-shadow:0 14px 28px -12px rgba(0,0,0,.45);
+    margin:12px 0 12px;
+  }
+
+  .hero-proof{ display:flex; align-items:center; gap:10px; margin:8px 0 12px; color:#fff; opacity:.95; }
+  .hero-proof .i{ width:22px; height:22px; }
+  .hero-btn{ width:100%; max-width: 420px; }
+
+  .hero-v-sep{ display:none; } /* на мобиле линии нет */
+}
+
+/* ====================== HERO — DESKTOP (как на втором скрине) ====================== */
+@media (min-width: 981px){
+  /* сетка 2 колонки ровно 50/50 + вертикальная линия */
+  .hero-two-col{
+    display:grid;
+    grid-template-columns: 1fr 1px 1fr;   /* левая | линия | правая */
+    gap: 36px;
+    max-width: 1240px;
+    margin: 0 auto;
+    align-items:start;
+  }
+  .hero-col{ display:flex; flex-direction:column; align-items:flex-start; text-align:left; }
+  .hero-col--left  { grid-column:1; }
+  .hero-col--right { grid-column:3; }
+
+  .hero-v-sep{
+    grid-column:2; width:1px; border-radius:999px;
+    background: linear-gradient(180deg, var(--brand), var(--brand-2));
+    opacity:.35;
+  }
+
+  /* одинаковые заголовки слева/справа (размер — как на макете) */
+  .hero-title{ font-weight:800; font-size:42px; line-height:1.15; margin:0 0 10px; }
+  .hero-col--right .hero-title{ white-space:nowrap; }
+
+  /* одинаковые описания и ширина текста */
+  .hero-lead{
+    font-size:18px; line-height:1.7; color:var(--muted);
+    max-width: 640px; margin: 0 0 16px;
+  }
+
+  /* ФОТО: абсолютно одинаковый размер слева и справа */
+  .hero-img{
+    width:100%;
+    height: 360px;              /* <<< КЛЮЧ: одинаковая высота */
+    object-fit: cover;          /* как на правом блоке */
+    border-radius:18px;
+    box-shadow:0 14px 28px -12px rgba(0,0,0,.45);
+    margin: 12px 0 12px;
+  }
+
+  /* Пруф-строки одинаково выглядят */
+  .hero-proof{ display:flex; align-items:center; gap:10px; color:#fff; opacity:.95; margin:8px 0 16px; }
+  .hero-proof .i{ width:24px; height:24px; }
+
+  /* Кнопки одинаковые */
+  .hero-btn{
+    display:inline-flex; justify-content:center; align-items:center;
+    min-height:52px; min-width:260px; padding:14px 22px;
+    border-radius:14px;
+  }
+}
+
 
