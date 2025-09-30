@@ -1159,4 +1159,87 @@ body{
   .hero-image .m-edu-btn{ min-width: 240px; }
 }
 
+/* === DESKTOP-ONLY: Hero в две колонки с вертикальной линией. Мобилу не трогаем. === */
+@media (min-width: 981px){
+  /* Две равные колонки + вертикальная разделительная линия */
+  .hero-image{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+    position: relative;
+    max-width: 1160px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .hero-image::before{
+    content:"";
+    position:absolute; top:0; bottom:0; left:50%;
+    width:1px; transform:translateX(-0.5px);
+    background:linear-gradient(180deg, var(--brand), var(--brand-2));
+    opacity:.35; border-radius:999px; pointer-events:none;
+  }
+
+  /* Явное раскладывание: слева — обучение, справа — продажа авто */
+  .hero-image > .mobile-edu-under{ grid-column: 1; }
+  .hero-image > .hero-title,
+  .hero-image > .lead,
+  .hero-image > .hero-main-img,
+  .hero-image > .hero-stat--right,
+  .hero-image > .hero-cta,
+  .hero-image > .mobile-sep{ grid-column: 2; }
+
+  /* Одинаковые размеры шрифтов заголовков и описаний */
+  .m-edu-title,
+  .hero-title{
+    font-weight: 800;
+    font-size: clamp(28px, 2.2vw, 40px);
+    line-height: 1.15;
+    margin: 0 0 10px;
+  }
+  .m-edu-lead,
+  .hero-image > .lead{
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+
+  /* Фото одинаковой ширины/стиля и одинакового соотношения сторон */
+  .mobile-edu-img,
+  .hero-main-img{
+    width:100%; height:auto; border-radius:18px;
+    aspect-ratio: 16 / 9;            /* одинаковая высота на экране */
+    object-fit: cover;
+    box-shadow:0 14px 28px -12px rgba(0,0,0,.45);
+    margin: 8px 0 10px;
+  }
+
+  /* Кнопки одинаковой ширины/высоты */
+  .m-edu-btn,
+  .hero-cta{
+    display:inline-flex; justify-content:center; align-items:center;
+    min-height: 48px;
+    min-width: 240px;
+    padding: 14px 18px;
+  }
+
+  /* Пруф-строки слева/справа с одинаковым стилем */
+  .m-edu-proof,
+  .hero-stat--right{
+    display:flex; align-items:center; gap:10px;
+    margin: 8px 0 10px;
+    color:#fff;
+    opacity:.95;
+  }
+  .m-edu-proof .i,
+  .hero-stat--right .i{ width:24px; height:24px; }
+
+  /* Разделитель пусть остаётся только в правой колонке и чуть уже */
+  .hero-image > .mobile-sep{
+    grid-column: 2;
+    max-width: 520px;
+    margin-left: 0;
+  }
+}
 
