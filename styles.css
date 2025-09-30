@@ -891,3 +891,17 @@ body{
   .result-cta { justify-content: center; }
   .result-price { margin-left: 0; }
 }
+/* По умолчанию мобильный дубль скрыт */
+.hero-stat--mobile { display: none; }
+
+/* Только мобильная логика: показываем версию над кнопкой, а левую — прячем */
+@media (max-width: 900px) {
+  .hero-text .hero-stat { display: none; }           /* скрыть левую */
+  .hero-image .hero-stat--mobile { 
+    display: flex;                                   /* показать правую */
+    margin-top: 12px;                                /* чуть-чуть отступ от фото */
+    margin-bottom: 8px;                              /* и над кнопкой */
+    justify-content: center;                         /* красиво по центру */
+    text-align: center;
+  }
+}
