@@ -839,4 +839,35 @@ body{
     white-space: normal; /* чтобы переносился, если не помещается */
   }
 }
+/* === HERO: фикс размеров и переносов на мобиле (перебиваем .hero h1 и nowrap) === */
+@media (max-width: 600px) {
+  /* Снимаем запрет переносов, чтобы строка не вылазила */
+  .hero-image .hero-title,
+  .hero-title {
+    white-space: normal !important;
+  }
+
+  /* Перебиваем .hero h1 { font-size:44px } на телефонах */
+  .hero h1.hero-title {
+    font-size: clamp(18px, 5.2vw, 22px) !important;
+    line-height: 1.2 !important;
+    text-align: center;
+    letter-spacing: .2px;
+  }
+}
+
+/* === Стрелки на кнопках — сделать крупнее === */
+.hero-cta::after,
+.hero-actions--center .btn::after {
+  content: "→";
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 22px;     /* было меньше — увеличили */
+  line-height: 1;
+  transition: transform .2s ease;
+}
+.hero-cta:hover::after,
+.hero-actions--center .btn:hover::after {
+  transform: translateX(3px);
+}
 
