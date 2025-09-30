@@ -1465,4 +1465,22 @@ body{
   }
 }
 
+/* === FIX: левая фотка = правая === */
+@media (min-width: 981px){
+  .hero-col .hero-img {
+    width: 100%;
+    height: 400px;            /* одинаковая высота */
+    object-fit: cover;        /* фото обрезается как справа */
+    border-radius: 18px;
+  }
+
+  /* Растягиваем содержимое левой колонки под размер фото */
+  .hero-col--left .hero-lead,
+  .hero-col--left .hero-proof,
+  .hero-col--left .hero-btn {
+    max-width: none;
+    width: 100%;
+    text-align: center;
+  }
+}
 
