@@ -1641,3 +1641,15 @@ body{
 .hero2-title--violet {
   color: #b389ff;
 }
+
+/* ===== Hero Mobile Swap (BEGIN) ===== */
+@media (max-width: 980px) {
+  .hero2-col:first-of-type {
+    order: 2; /* Обучение уходит вниз */
+  }
+  .hero2-col:last-of-type {
+    order: 1; /* Продажа авто поднимается наверх */
+  }
+}
+/* ===== Hero Mobile Swap (END) ===== */
+
