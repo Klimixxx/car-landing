@@ -48,11 +48,13 @@
     <!-- HERO -->
     <section class="hero section">
       <div class="container hero-inner">
+
+        <!-- Унифицированный контейнер Hero -->
         <div class="hero-two-col">
-          <!-- Левая: ОБУЧЕНИЕ -->
+          <!-- Левая часть: ОБУЧЕНИЕ -->
           <div class="hero-col hero-col--left">
             <h2 class="m-edu-title grad-violet">Обучение</h2>
-            <p class="m-edu-lead hero-lead">
+            <p class="m-edu-lead">
               Разбираем рынок торгов, процедуры выкупа и практические кейсы — от первых шагов до заработка на услугах и сделках.
             </p>
 
@@ -66,10 +68,10 @@
             <a class="btn xl outline hero-btn" href="/training.html">Программа обучения</a>
           </div>
 
-          <!-- Вертикальная линия -->
+          <!-- Вертикальная линия-разделитель (показывается только на ПК через CSS) -->
           <div class="hero-v-sep" aria-hidden="true"></div>
 
-          <!-- Правая: ПРОДАЖА АВТО -->
+          <!-- Правая часть: ПРОДАЖА АВТО -->
           <div class="hero-col hero-col--right">
             <h1 class="hero-title">Продажа Авто с торгов <span class="grad-violet">здесь!</span></h1>
 
@@ -89,12 +91,14 @@
             </a>
           </div>
         </div>
+
       </div>
     </section>
     <!-- /HERO -->
   </main>
 
   <script>
+    // Плавное появление секций
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     },{threshold:0.15});
