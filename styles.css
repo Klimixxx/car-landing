@@ -1483,4 +1483,15 @@ body{
     text-align: center;
   }
 }
+/* === FIX: левая фотка = правая (одинаковые ширина и высота) === */
+@media (min-width: 981px){
+  .hero-col--left .hero-img,
+  .hero-col--right .hero-img {
+    display: block;
+    width: 100%;          /* фотка занимает всю ширину колонки */
+    height: 320px;        /* одинаковая высота */
+    object-fit: cover;    /* обрезка по пропорциям, чтобы картинка смотрелась одинаково */
+    border-radius: 18px;
+  }
+}
 
