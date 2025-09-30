@@ -46,46 +46,49 @@
   </header>
 
   <main id="top">
-    <!-- HERO (унифицирован под мобильный вид и на ПК) -->
+    <!-- HERO -->
     <section class="hero section">
       <div class="container hero-inner">
-        <!-- Оставляем только «мобильную» структуру -->
+        <!-- Вся раскладка — в одном контейнере (как на мобиле).
+             На ПК раскладываем в 2 колонки через CSS. -->
         <div class="hero-image">
+          <!-- ПРАВАЯ ЧАСТЬ (Продажа авто) — на ПК уедет вправо -->
           <h1 class="hero-title">Продажа Авто с торгов <span class="grad-violet">здесь!</span></h1>
 
-          <!-- Описание сразу под H1 (без класса lead--mobile, чтобы показывалось и на ПК) -->
           <p class="lead">
             Мы ежедневно пополняем и обновляем список автомобилей, продаваемых с торгов. Наша работа заключается в том, что мы выкупаем авто для наших клиентов. Вам не нужно проходить аккредитацию, участвовать в торгах, проверять машину на ограничения — мы всё это сделаем за вас.
           </p>
 
-          <!-- Фото под описанием -->
-          <img src="/assets/img/parking.jpg" alt="Автомобили с торгов" loading="lazy">
+          <img class="hero-main-img" src="/assets/img/parking.jpg" alt="Автомобили с торгов" loading="lazy">
 
-          <!-- Кнопка под изображением -->
+          <!-- Иконка машины + текст -->
+          <div class="hero-stat hero-stat--right">
+            <span class="i i-car" aria-hidden="true"></span>
+            <span>Более 1 000 000 автомобилей выгружено в наш телеграм-канал.</span>
+          </div>
+
+          <!-- Кнопка "Перейти к объявлениям" -->
           <a class="btn xl primary hero-cta" href="https://t.me/auctionafto" target="_blank" rel="noopener">
             Перейти к объявлениям
           </a>
 
-          <!-- Разделитель -->
+          <!-- Разделитель (используется и на мобиле) -->
           <div class="mobile-sep" aria-hidden="true"></div>
 
-          <!-- Блок «Обучение» (мобильный вид — теперь и для десктопа) -->
+          <!-- ЛЕВАЯ ЧАСТЬ (Обучение) — на ПК уедет влево -->
           <div class="mobile-edu-under">
             <h2 class="m-edu-title grad-violet">Обучение</h2>
             <p class="m-edu-lead">
               Разбираем рынок торгов, процедуры выкупа и практические кейсы — от первых шагов до заработка на услугах и сделках.
             </p>
 
-            <!-- Фото обучения под описанием -->
             <img class="mobile-edu-img" src="/assets/img/auction.jpg" alt="Аукцион, обучение торгам" loading="lazy">
 
-            <!-- Пруф-строка -->
             <div class="m-edu-proof">
               <span class="i i-cap" aria-hidden="true"></span>
               <span>100+ учеников прошли наше обучение и зарабатывают на торгах</span>
             </div>
 
-            <!-- Кнопка программы обучения -->
             <a class="btn xl outline m-edu-btn" href="/training.html">Программа обучения</a>
           </div>
         </div>
@@ -95,7 +98,6 @@
   </main>
 
   <script>
-    // Появление секций при скролле (у вас уже используется)
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     },{threshold:0.15});
