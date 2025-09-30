@@ -891,17 +891,23 @@ body{
   .result-cta { justify-content: center; }
   .result-price { margin-left: 0; }
 }
-/* По умолчанию мобильный дубль скрыт */
+/* мобильный дубль статистики: по умолчанию скрыт */
 .hero-stat--mobile { display: none; }
 
-/* Только мобильная логика: показываем версию над кнопкой, а левую — прячем */
+/* на мобильных показываем правый дубль и скрываем левый */
 @media (max-width: 900px) {
-  .hero-text .hero-stat { display: none; }           /* скрыть левую */
+  .hero-text .hero-stat { display: none; }           /* скрыть левую копию */
   .hero-image .hero-stat--mobile { 
-    display: flex;                                   /* показать правую */
-    margin-top: 12px;                                /* чуть-чуть отступ от фото */
-    margin-bottom: 8px;                              /* и над кнопкой */
-    justify-content: center;                         /* красиво по центру */
+    display: flex;
+    gap: 8px;
+    margin: 12px 0 8px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+  }
+  .hero-image .hero-stat--mobile .i { /* если у тебя есть иконка-стиль */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }
