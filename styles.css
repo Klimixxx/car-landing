@@ -1825,3 +1825,13 @@ body{
   z-index: 1;
   color: #fff;
 }
+/* Стилизация кнопки "Сылка на лот" */
+.result-link {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2)) !important;
+  border: none !important;
+  color: #0b1220 !important;   /* тёмный текст, как на остальных фиолетовых кнопках */
+  font-weight: 700;
+}
+.result-link:hover {
+  filter: brightness(1.05);
+}
