@@ -26,8 +26,16 @@ body{
 .decor-2{width:420px; height:420px; bottom:-140px; left:-90px;}
 
 .container{max-width:1160px; margin:0 auto; padding:0 20px}
-.section{padding:72px 0; opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
-.section.in{opacity:1; transform:none}
+.section{padding:72px 0;}
+
+@media (prefers-reduced-motion: no-preference){
+  .section{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
+  .section.in{opacity:1; transform:none}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .section{opacity:1; transform:none}
+}
 
 /* Секция видима, если открыта по якорю */
 .section:target{opacity:1 !important; transform:none !important}
