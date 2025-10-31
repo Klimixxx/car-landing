@@ -1835,3 +1835,11 @@ body{
 .result-link:hover {
   filter: brightness(1.05);
 }
+
+.sp-price-per {
+  font-size: 18px;       /* подстройте при необходимости */
+  opacity: .85;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
