@@ -1493,12 +1493,12 @@ body{
   --hero2-bg: #ffffff;
   --hero2-text: #111111;
   --hero2-muted: #4b5563;
-  --hero2-title: #d60000;
-  --hero2-accent: #d60000;
+  --hero2-title: #ea1616;
+  --hero2-accent: #ea1616;
   --hero2-line: rgba(17,17,17,.08);
   --hero2-btn-bg: #f3f4f6;
-  --hero2-primary-from: #ff3b3b;
-  --hero2-primary-to:   #d60000;
+  --hero2-primary-from: #ea1616;
+  --hero2-primary-to:   #ea1616;
   --hero2-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 8px 28px rgba(0,0,0,.12);
   --hero2-radius: 16px;
 }
@@ -1555,6 +1555,11 @@ body{
   line-height: 1.55;
   max-width: 560px;
   margin: 0 0 20px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, rgba(234,22,22,0.1), rgba(234,22,22,0.02));
+  border:1px solid rgba(234,22,22,0.18);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .hero2-figure{
@@ -1622,7 +1627,7 @@ body{
 .hero2-btn--primary{
   color: white;
   background: linear-gradient(90deg,var(--hero2-primary-from),var(--hero2-primary-to));
-  box-shadow: 0 10px 30px rgba(214,0,0,.18);
+  box-shadow: 0 10px 30px rgba(234,22,22,.22);
   border: none;
 }
 
@@ -1719,6 +1724,41 @@ body{
   text-align: center;
   color: var(--muted);
   font-size: clamp(16px, 1.6vw, 18px);
+}
+
+/* === Training page palette: светлый фон и красные акценты === */
+.training-page{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#4b5563;
+  --brand:#ea1616;
+  --brand-2:#ff4d4d;
+  --brand-strong:#d60f0f;
+  --border:rgba(0,0,0,0.08);
+  --ring:rgba(234,22,22,0.16);
+  --glass:rgba(0,0,0,0.02);
+  --danger:#ea1616;
+  background:#fff;
+  color:var(--text);
+}
+.training-page .brand-f{ color:#ea1616; }
+.training-page .grad-violet{
+  background:linear-gradient(90deg, #ff4d4d, #ea1616);
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent;
+}
+.training-page .btn.primary{ color:#fff; }
+.training-page .site-header{ background:rgba(255,255,255,0.8); border-bottom:1px solid var(--border); backdrop-filter:saturate(120%) blur(10px); }
+.training-page .site-footer{ background:rgba(0,0,0,0.04); }
+
+/* Заголовок: красное слово и чёрная плашка под брендом */
+.training-hero-title{ color:#0b1220; }
+.training-title-accent{ color:#ea1616; }
+.training-title-chip{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 12px; border-radius:12px;
+  background:#0b1220; color:#fff;
+  box-shadow:0 6px 18px rgba(0,0,0,0.16);
 }
 
 /* === Мини-карточки: 2×2 на десктопе === */
