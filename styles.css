@@ -1490,16 +1490,16 @@ body{
 
 /* ===== HERO v2 (BEGIN) ===== */
 :root{
-  --hero2-bg: transparent;          /* фон секции — прозрачно, сайт тёмный */
-  --hero2-text: #d8deea;            /* основной текст */
-  --hero2-muted: #9aa3b2;           /* подписи */
-  --hero2-title: #eaf0ff;           /* заголовки */
-  --hero2-accent: #b389ff;          /* фиолетовый "здесь!" */
-  --hero2-line: rgba(146,153,170,.22); /* вертикальная линия */
-  --hero2-btn-bg: #1f2a44;          /* ghost hover */
-  --hero2-primary-from: #6c7cff;    /* градиент кнопки */
-  --hero2-primary-to:   #8e5cff;
-  --hero2-shadow: 0 0 0 1px rgba(255,255,255,.04), 0 8px 30px rgba(0,0,0,.35);
+  --hero2-bg: #ffffff;
+  --hero2-text: #111111;
+  --hero2-muted: #4b5563;
+  --hero2-title: #d60000;
+  --hero2-accent: #d60000;
+  --hero2-line: rgba(17,17,17,.08);
+  --hero2-btn-bg: #f3f4f6;
+  --hero2-primary-from: #ff3b3b;
+  --hero2-primary-to:   #d60000;
+  --hero2-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 8px 28px rgba(0,0,0,.12);
   --hero2-radius: 16px;
 }
 
@@ -1516,13 +1516,16 @@ body{
 
 .hero2-grid{
   display: grid;
-  grid-template-columns: 1fr 1px 1fr; /* левая | линия | правая */
+  grid-template-columns: 1fr;
   align-items: start;
-  gap: clamp(28px, 4vw, 40px);
+  gap: clamp(20px, 4vw, 28px);
+  max-width: 820px;
+  margin: 0 auto;
 }
 
 .hero2-col{
   color: var(--hero2-text);
+  text-align: left;
 }
 
 .hero2-title{
@@ -1547,7 +1550,7 @@ body{
 
 .hero2-text{
   color: var(--hero2-text);
-  opacity: .9;
+  opacity: 1;
   font-size: 16px;
   line-height: 1.55;
   max-width: 560px;
@@ -1587,9 +1590,7 @@ body{
 }
 
 .hero2-divider{
-  width: 1px;
-  background: var(--hero2-line);
-  min-height: 100%;
+  display: none;
 }
 
 .hero2-btn{
@@ -1608,10 +1609,10 @@ body{
 .hero2-btn:hover{ transform: translateY(-1px); }
 
 .hero2-btn--ghost{
-  color: var(--hero2-title);
-  background: rgba(255,255,255,.06);
+  color: var(--hero2-text);
+  background: #f8fafc;
   box-shadow: var(--hero2-shadow);
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(0,0,0,.08);
 }
 
 .hero2-btn--ghost:hover{
@@ -1621,7 +1622,7 @@ body{
 .hero2-btn--primary{
   color: white;
   background: linear-gradient(90deg,var(--hero2-primary-from),var(--hero2-primary-to));
-  box-shadow: 0 6px 20px rgba(124,106,255,.35);
+  box-shadow: 0 10px 30px rgba(214,0,0,.18);
   border: none;
 }
 
@@ -1637,9 +1638,9 @@ body{
   .hero2-btn{ width: 100%; justify-content: center; }
 }
 /* ===== HERO v2 (END) ===== */
-/* Фиолетовый цвет для заголовка Обучение */
+/* Акцентный цвет заголовка Обучение */
 .hero2-title--violet {
-  color: #b389ff;
+  color: var(--hero2-title);
 }
 
 /* ===== Hero Mobile Swap (BEGIN) ===== */
@@ -1842,4 +1843,3 @@ body{
   margin-left: 8px;
   white-space: nowrap;
 }
-
