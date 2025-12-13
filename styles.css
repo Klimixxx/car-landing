@@ -33,11 +33,12 @@ body{
 .section:target{opacity:1 !important; transform:none !important}
 
 /* Header */
-.site-header{position:sticky; top:0; z-index:10; backdrop-filter:saturate(120%) blur(10px); background:rgba(7,11,20,0.55); border-bottom:1px solid var(--border)}
+.site-header{position:sticky; top:0; z-index:10; backdrop-filter:none; background:transparent; border-bottom:none}
 .header-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
-.logo{display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none; font-weight:800; letter-spacing:.2px}
+.logo{display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:800; letter-spacing:.2px}
 .logo-mark{width:28px; height:28px; display:block}
 .logo-type{font-size:16px; line-height:1}
+.site-header .btn{color:var(--text); background:var(--glass); border-color:var(--border)}
 /* Буква F — красная и слегка больше */
 .brand-f{
   color:var(--danger);
@@ -1785,11 +1786,7 @@ body{
   color:transparent;
 }
 .training-page .btn.primary{ color:#fff; }
-.training-page .site-header{
-  background:rgba(7,11,20,0.55);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:saturate(120%) blur(10px);
-}
+.training-page .site-header{ background:transparent; border-bottom:none; backdrop-filter:none; }
 .training-page .nav a{ color:#d5ddf7; }
 .training-page .nav a:hover{ color:#fff; }
 .training-page .site-footer{ background:rgba(7,11,20,0.55); }
