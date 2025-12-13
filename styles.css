@@ -328,13 +328,13 @@ body{
 .sp-badge{
   display:inline-block; padding:6px 10px; border-radius:999px;
   background:rgba(255,255,255,.06); border:1px solid var(--border);
-  color:#fff; font-weight:700; letter-spacing:.3px; font-size:12px;
+  color:#000; font-weight:700; letter-spacing:.3px; font-size:12px;
 }
 .sp-title{
   margin:10px 0 6px; font-size:34px; line-height:1.1;
-  color:#000;
+  color:var(--danger);
   background:none;
-  -webkit-text-fill-color:#000;
+  -webkit-text-fill-color:var(--danger);
 }
 .sp-lead{ color:var(--muted); max-width:900px; margin:0 auto; }
 .sp-lead strong{
@@ -372,7 +372,12 @@ body{
 .sp-dot{ display:none !important; }
 .sp-item:hover .sp-dot{ transform:none; }
 
-.sp-text{ margin:0; color:var(--muted); line-height:1.6; }
+.sp-text{ margin:0; color:var(--muted); line-height:1.6; padding-left:16px; position:relative; }
+.sp-text::before{
+  content:""; position:absolute; left:0; top:10px;
+  width:10px; height:10px; border-radius:2px;
+  background:var(--danger);
+}
 .sp-text strong{
   color:#000;
   background:#fff;
