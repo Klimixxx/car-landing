@@ -9,14 +9,15 @@
   --ring:rgba(122,162,255,0.55);
   --glass:rgba(255,255,255,0.06);
   --danger:#ff3b3b; /* красный для буквы f и перечёркнутой цены */
+  --header-bg:rgba(7,11,20,0.55);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0; font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  /* ФОН: убрали белёсые свечения — оставляем чистый тёмный */
-  background: var(--bg);
-  color:var(--text);
+  /* Светлый фон для главной страницы */
+  background:#fff;
+  color:#0b1220;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
 
@@ -33,12 +34,24 @@ body{
 .section:target{opacity:1 !important; transform:none !important}
 
 /* Header */
-.site-header{position:sticky; top:0; z-index:10; backdrop-filter:none; background:transparent; border-bottom:none}
+.site-header{
+  position:sticky; top:0; z-index:10;
+  backdrop-filter:none;
+  background:var(--header-bg);
+  border-bottom:1px solid rgba(255,255,255,0.14);
+  box-shadow:0 10px 30px -22px rgba(0,0,0,0.55);
+}
 .header-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
-.logo{display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:800; letter-spacing:.2px}
+.logo{display:flex; align-items:center; gap:10px; color:#e6ebff; text-decoration:none; font-weight:800; letter-spacing:.2px}
 .logo-mark{width:28px; height:28px; display:block}
 .logo-type{font-size:16px; line-height:1}
-.site-header .btn{color:var(--text); background:var(--glass); border-color:var(--border)}
+.site-header .btn{
+  color:#fff;
+  background:rgba(255,255,255,0.08);
+  border-color:rgba(255,255,255,0.18);
+}
+.site-header .nav a{color:rgba(230,235,255,0.9);}
+.site-header .nav a:hover{color:#fff;}
 /* Буква F — красная и слегка больше */
 .brand-f{
   color:var(--danger);
@@ -1786,7 +1799,14 @@ body{
   color:transparent;
 }
 .training-page .btn.primary{ color:#fff; }
-.training-page .site-header{ background:transparent; border-bottom:none; backdrop-filter:none; }
+.training-page .site-header{
+  background:var(--header-bg);
+  border-bottom:1px solid rgba(255,255,255,0.14);
+}
+.training-page .logo,
+.training-page .nav a,
+.training-page .site-header .btn{ color:#e6ebff; }
+.training-page .nav a:hover{ color:#fff; }
 .training-page .nav a{ color:#d5ddf7; }
 .training-page .nav a:hover{ color:#fff; }
 .training-page .site-footer{ background:rgba(7,11,20,0.55); }
